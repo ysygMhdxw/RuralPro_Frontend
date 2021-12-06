@@ -3,7 +3,7 @@
     <el-container>
       <GithubCorner/>
       <el-header><NavigationBar/></el-header>
-      <el-container  style="height: 800px; border: 1px solid #eee">
+      <el-container  style="height: 100%; border: 1px solid #eee">
         <el-aside width="177px"><AsideBar/></el-aside>
         <el-main><BodyMap/></el-main>
       </el-container>
@@ -49,12 +49,13 @@ export default {
   color: var(--el-text-color-primary);
   text-align: center;
   line-height: 300px;
+  height: 640px;
 }
 
 .el-main {
-
   text-align: center;
   line-height: 160px;
+  padding: 0;
 }
 
 body > .el-container {
