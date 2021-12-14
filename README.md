@@ -30,12 +30,11 @@ npm run build
 
 ## 🤩Finished
 - BodyMap的各省市扶贫县数量和轮播显示（已连接后端，数据库还在完善）
-- HomePage导航栏吸顶显示
+- HomePage导航栏吸顶显示 
+- 首页的导航栏子菜单显示，icon添加
 
 ## 👊Unfinished
-- 首页的导航栏子菜单显示，icon添加
 - 首页头部 标志和搜索栏的浮于背景图
-- 首页插入地图
 - 首页绘制地图右边的简介
 - 首页Footer
 - 县详情页可视化
