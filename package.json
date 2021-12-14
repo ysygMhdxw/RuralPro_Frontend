@@ -7,10 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@element-plus/icons": "0.0.11",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
-    "d3": "^5.16.0",
+    "d3": "^5.15.0",
     "d3-tip": "^0.9.1",
+    "echarts": "^5.2.2",
     "element-plus": "^1.2.0-beta.4",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

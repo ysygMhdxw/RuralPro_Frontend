@@ -1,164 +1,280 @@
 <template>
-  <div id="world">
-    <svg id="mainsvg" class="svgs"></svg>
+  <div>
+    <div style="width: 800px;height:600px;" id="world">
+    </div>
+    <el-row>
+      <el-col :span="2">
+        <div>
+
+          <el-button type="primary" circle><el-icon @click.native="playMap()"><video-play /></el-icon></el-button>
+        </div>
+      </el-col>
+      <el-col :span="13">
+        <div class="progressStep" style="text-align: left">
+
+          <el-steps :active="active"  :space="80">
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="2015-2016年，28个贫困县脱贫"
+                placement="top-start"
+            >
+              <el-step title="2015年" id="2015"></el-step>
+            </el-tooltip>
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="2016-2017年，125个贫困县脱贫"
+                placement="top-start"
+            >
+              <el-step title="2016年" id="2016" @click.native="yearSwitch(2016)"></el-step>
+            </el-tooltip>
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="2017-2018年，283个贫困县脱贫"
+                placement="top-start"
+            >
+              <el-step title="2017年" id="2017" @click.native="yearSwitch(2017)"></el-step>
+            </el-tooltip>
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="2018-2019年，344个贫困县脱贫"
+                placement="top-start"
+            >
+              <el-step title="2018年" id="2018" @click.native="yearSwitch(2018)"></el-step>
+            </el-tooltip>
+
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="2019-2020年，52个贫困县脱贫"
+                placement="top-start"
+            >
+              <el-step title="2019年" id="2019" @click.native="yearSwitch(2019)"></el-step>
+            </el-tooltip>
+
+
+
+            <el-tooltip
+                class="item"
+                effect="light"
+                content="截至2020年底，832个贫困县全部摘帽"
+                placement="top-start"
+            >
+              <el-step title="2020年" id="2020" @click.native="yearSwitch(2020)"></el-step>
+            </el-tooltip>
+            <el-step title="2021年" id="2021" @click.native="yearSwitch(2021)"></el-step>
+
+          </el-steps>
+
+        </div>
+      </el-col>
+    </el-row>
+
   </div>
+
+
 </template>
 <script>
 
-import * as d3 from "d3"
-import d3Tip from "d3-tip"
+import china from "../assets/js/china"
+import * as echarts from 'echarts';
 import request from "@/utils/request";
+import {VideoPlay} from "@element-plus/icons";
 
 export default {
   name: "BodyMap",
   mounted() {
-    let d3Tip = require("d3-tip");
     this.first();
-    this.loadMap();
+    this.yearSwitch(2016);
   },
   data() {
-    return {}
+    return {
+      index:{},
+      mydata: {},
+      sanData: {},
+      geoCoordMap: {},
+      active: 0,
+    }
   },
   methods: {
+
+    playMap(){
+      console.log(this.active)
+     if(this.active+2016<=2021){
+       this.yearSwitch(this.active+2016);
+       var _this=this
+       setTimeout(function (){
+         _this.playMap();
+       },1000);
+      }
+    }
+    ,
+
+    yearSwitch(year) {
+      if(year>2021)
+        return
+      request.get("map/" + year, {
+        params: {
+          year: year
+        }
+      }).then(res => {
+        console.log(res)
+        this.mydata=res.data
+        this.active = year - 2016 + 1;
+        this.loadMap()
+        return res.data
+      })
+    }
+    ,
+    convertData: function (data) { // 处理数据函数
+      var res = [];
+      for (var i = 0; i < data.length; i++) {
+        var geoCoord = this.geoCoordMap[data[i].name];
+        if (geoCoord) {
+          res.push({
+            name: data[i].name,
+            value: geoCoord.concat(-1)
+          });
+        }
+      }
+      return res;
+    }
+    ,
+
     first() {
     },
     loadMap() {
+      request.get("County/description").then(res => {
+        console.log(res)
+      })
 
-      var width = 900, height = 400;
+      function randomData() {
+        return Math.round(Math.random() * 500);
+      }
 
-      const svg = d3.select("#mainsvg")
-          .attr("height", height)
-          .attr("width", width);
+      console.log(this.mydata)
+      this.sanData = [
+        {name: "散点1", value: 10000},
+        {name: "散点2", value: 170000},
+        {name: "散点3", value: 1900000},
+        {name: "散点4", value: 1900000},
+        {name: "散点5", value: 1900000},
+      ]
+      this.geoCoordMap = {
+        "散点1": [112.549248, 37.857014],
+        "散点2": [116.000052, 37.857014],
+        "散点3":  [116.302563,39.872545]
+      }
 
-      const margin = {top: 20, right: 0, bottom: 0, left: 0};
-      const innerWidth = width - margin.left - margin.right;
-      const innerHeight = height - margin.top - margin.bottom;
-      const g = svg.append('g').attr('id', 'maingroup')
-          .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-      // 创建投影
-      const projection = d3.geoNaturalEarth1();
-      const geo = d3.geoPath().projection(projection);
+      var myChart = echarts.init(document.getElementById("world"));
+      var option = {
+        backgroundColor: '',
+        title: {
+          text: '贫困县分布图',
+          x: 'center'
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        geo: { // 地图配置
+          show: false,
+          map: "china",
+          label: {
+            normal: {
+              show: false
+            },
+            emphasis: {
+              show: false
+            }
+          },
+          roam: false,
 
-      // 设置提示标签
-      // console.log(d3Tip())
+        },
+        visualMap: {
+          min: 0, // 最小值
+          max: 80, // 最大值
+          text: ['80', '0'],
+          realtime: false,
+          calculable: false,
+          seriesIndex: [0],
+          inRange: {
+            color: ['#e6f7ff', '#1890FF', '#0050b3'] // 渐变颜色
+          }
+        },
+        series: [
+          //地图配置
+          {
+            name: "贫困县个数",
+            type: 'map',
+            mapType: 'china',
+            label: {
+              normal: {
+                show: false
+              },
+              emphasis: {
+                show: false
+              }
+            },
+            itemStyle: {
+              emphasis: {
+                areaColor: "#c6e7ec",
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                borderWidth: 0
+              }
+            },
+            data: this.mydata
+          },//散点配置
+          {
+            visualMap: false,
+            name: "数量",
+            type: "effectScatter",
+            coordinateSystem: 'geo',
+            data: this.convertData(this.sanData),
+            symbolSize: 3,
+            showEffectOn: "emphasis",
+            rippleEffect: {brushType: 'stroke'},
+            hoverAnimation: true,
+            label: {
+              normal: {
+                formatter: '{b}',
+                position: 'right',
+                show: false
+              },
+              emphasis: {
+                show: true
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: "#FFFFFFFF"
+              }
+            }
 
-      const tip = d3Tip()
-          .attr('class', 'd3-tip')
-          .html(function (d, x, y) {
-            console.log(x + "!");
-            console.log(y + "!")
-            this.style.position="absolute";
-            this.style("top", x);
-            this.style("left", y+"px");
-
-            return "<strong>省份:</strong>" + d.properties.name + "</span>";
-          })
-
-      svg.call(tip);
-
-      // 解析json
-      d3.json('ChinaGeo.json').then(data => {
-
-        console.log(data);
-
-        // 铺满画布
-        projection.fitSize([innerWidth, innerHeight], data);
-
-        // 渲染地图
-        g.selectAll('path').data(data.features).join('path')
-            .attr('d', geo)
-            .attr('stroke', 'black')
-            .attr('stroke-width', 1)
-
-            // 鼠标移入样式，提示标签显示
-            .on('mouseover', function (d) {
-              d3.select(this)
-                  .attr('opacity', 0.5)
-                  .attr('stroke', 'white')
-                  .attr('stroke-width', 6);
-              // 从d3.event获取鼠标的位置
-              var transform = d3.event;
-              var yPosition = transform.offsetY + 20;
-              var xPosition = transform.offsetX + 20;
-              console.log(xPosition);
-              console.log(yPosition)
-              // 将浮层位置设置为鼠标位置
-              tip.show(d);
-            })
-
-            // 鼠标移出样式复原，提示标签隐藏
-            .on('mouseout', function (d) {
-              d3.select(this)
-                  .attr('opacity', 1)
-                  .attr('stroke', 'black')
-                  .attr('stroke-width', 1);
-              tip.hide(d);
-            });
-
-      });
-// //
-// //创建投影(projection)
-//       var projection = d3.geoMercator().translate([width / 2, height / 2]).center([105, 38]).scale(550);
-// //
-// //创建path
-//       const path = d3.geoPath()
-//           .projection(projection); //配置上投影
-
-// //解析json
-//       d3.json("ChinaGeo.json", function(json) {
-
-//         svg.selectAll("path")
-//             .data(json.features)
-//             .enter()
-//             .append("path")
-//             .attr("d", path)
-//             .on('mouseover', function(data) {
-//               d3.select(this).attr('fill', 'rgba(2,2,139,0.61)');
-
-//               //创建显示tooltip用的矩形
-//               svg.append("rect")
-//                   .attr("id", "tooltip1")
-//                   .attr("x", 50)
-//                   .attr("y",50)
-//                   .attr("width",140)
-//                   .attr("height",130)
-//                   .attr("stroke","black")
-//                   .attr("fill","none")
-//               ;
-
-//               //创建显示tooltip文本
-//               svg.append("text")
-//                   .attr("id", "tooltip2")
-//                   .attr("x", 100)
-//                   .attr("y", 100)
-//                   .attr("text-anchor", "middle")
-//                   .attr("font-family", "sans-serif")
-//                   .attr("font-size", "11px")
-//                   .attr("font-weight", "bold")
-//                   .attr("fill", "black")
-//                   .text(data.properties.name);
-//             })
-//             .on('mouseout', function(data) {
-//               d3.select(this).attr('fill', 'rgba(128,124,139,0.61)');
-//               //Remove the tooltip
-//               d3.select("#tooltip1").remove();
-//               d3.select("#tooltip2").remove();
-//             })
-//             .attr('fill', 'rgba(128,124,139,0.61)')
-//             .attr('stroke', 'rgba(255,255,255,1)')
-//             .attr('stroke-width', 1)
-//         ;
-//       });
+          }]
+      };
+      myChart.setOption(option)
     }
   }
 }
 
-</script>
 
-<script type="text/javascript">
 
 </script>
-<style>
-@import '../assets/css/BodyMap.css';
+
+<style scoped>
+.progressStep {
+  margin-left: 2px;
+
+}
+
 </style>
