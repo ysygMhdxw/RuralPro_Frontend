@@ -8,11 +8,13 @@
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5">
+          <img src="../assets/img/population.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>人口</span>
         </button>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-2">
+          <img src="../assets/img/economy.svg" width="25" height="27" style="padding-top:8px;padding-right: 4px"/>
           <span>经济</span>
         </button>
         <ul>
@@ -24,11 +26,13 @@
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-3">
+          <img src="../assets/img/livelihood.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>民生</span>
         </button>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-4">
+          <img src="../assets/img/county.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>农业和农村</span>
         </button>
         <ul>
@@ -38,6 +42,7 @@
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-5">
+          <img src="../assets/img/industry.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>工业</span>
         </button>
         <ul>
@@ -51,43 +56,6 @@
       </el-col>
 
     </el-row>
-
-    <!--          <el-menu-->
-    <!--              background-color="rgba(256,256,256,0.4)"-->
-    <!--              class="el-menu-demo"-->
-    <!--              mode="horizontal"-->
-    <!--              text-color="#000000"-->
-    <!--          >-->
-    <!--            <el-menu-item index="1">-->
-    <!--              <template #title>-->
-    <!--                <el-icon><Location /></el-icon>-->
-    <!--                <span>人口</span>-->
-    <!--              </template>-->
-    <!--            </el-menu-item>-->
-    <!--            <el-sub-menu index="2">-->
-    <!--              <template #title>经济</template>-->
-    <!--              <el-menu-item index="2-1">经济核算</el-menu-item>-->
-    <!--              <el-menu-item index="2-2">公共财政和投资发展</el-menu-item>-->
-    <!--              <el-menu-item index="2-3">市场消费</el-menu-item>-->
-    <!--            </el-sub-menu>-->
-    <!--            <el-menu-item index="3">-->
-    <!--              <template #title>-->
-    <!--                <el-icon><Location /></el-icon>-->
-    <!--                <span>民生</span>-->
-    <!--              </template>-->
-    <!--            </el-menu-item>-->
-    <!--            <el-sub-menu index="4" >-->
-    <!--            <template #title>农业和农村</template>-->
-    <!--            <el-menu-item index="4-1">经济核算</el-menu-item>-->
-    <!--            <el-menu-item index="4-2">公共财政和投资发展</el-menu-item>-->
-    <!--            <el-menu-item index="4-3">市场消费</el-menu-item>-->
-    <!--            </el-sub-menu>-->
-    <!--            <el-sub-menu index="5">-->
-    <!--              <template #title>工业</template>-->
-    <!--              <el-menu-item index="5-1">工业产品</el-menu-item>-->
-    <!--              <el-menu-item index="5-2">工业企业</el-menu-item>-->
-    <!--            </el-sub-menu>-->
-    <!--          </el-menu>-->
   </div>
 </template>
 
@@ -160,11 +128,11 @@ button {
 }
 
 .custom-btn {
-  width: 100px;
+  width: 250px;
   height: 50px;
   color: #fff;
   padding: 5px 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Brush Script MT", cursive;
   font-weight: 100;
   background: transparent;
   cursor: pointer;
@@ -179,8 +147,9 @@ button {
 
 /* 5 */
 .btn-5 {
-  width: 200px;
+  width: 300px;
   height: 50px;
+  font-size: 20px;
   line-height: 40px;
   padding: 0;
   margin: 2px;
@@ -239,7 +208,7 @@ button {
   transition: 800ms ease all;
 }
 
-.column > button:hover ~ul {
+.column:hover ul {
   display: block;
 }
 
@@ -254,14 +223,23 @@ button {
 }
 
 .column> ul > li > a {
-  width: 120px;
-  line-height: 36px;
+  margin-left: 10px;
+  width: 300px;
+  line-height: 40px;
   color: #456;
-  background-color: #eff;
+  background-color: #FFFFFF;
   text-align: center;
   border: 1px solid #ccc;
   border-top: none;
   display: block;
+}
+.column> ul > li>a:hover {
+  color: #FFFFFF;
+  background-color: #BD3131;
+  height: 40px;
+}
+ul{
+  list-style: none;
 }
 
 </style>

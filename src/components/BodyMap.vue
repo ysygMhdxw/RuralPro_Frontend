@@ -3,16 +3,15 @@
     <div style="width: 800px;height:600px;" id="world">
     </div>
     <el-row>
-      <el-col :span="2">
+      <el-col :span="2" style="margin-left: 100px">
         <div>
-
-          <el-button type="primary" circle><el-icon @click.native="playMap()"><video-play /></el-icon></el-button>
+          <el-button type="primary" style="background-color: #f1939c;border: #f1939c" circle><el-icon @click.native="playMap()"><video-play /></el-icon></el-button>
         </div>
       </el-col>
       <el-col :span="13">
-        <div class="progressStep" style="text-align: left">
+        <div class="progressStep" style="text-align: left;">
 
-          <el-steps :active="active"  :space="80">
+          <el-steps :active="active" finish-status="primary" style="color: #f1939c" :space="80">
 
             <el-tooltip
                 class="item"
@@ -207,7 +206,7 @@ export default {
           calculable: false,
           seriesIndex: [0],
           inRange: {
-            color: ['#e6f7ff', '#1890FF', '#0050b3'] // 渐变颜色
+            color: ['#e77c8e', '#ee3f4d', '#cc163a'] // 渐变颜色
           }
         },
         series: [
@@ -226,7 +225,7 @@ export default {
             },
             itemStyle: {
               emphasis: {
-                areaColor: "#c6e7ec",
+                areaColor: "#f0a1a8",
                 shadowOffsetX: 0,
                 shadowOffsetY: 0,
                 borderWidth: 0
