@@ -1,0 +1,485 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "兰考县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.80712890625,
+          34.82169535497484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "井冈山市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.28115844726562,
+          26.751742053399486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "滑县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.51187133789062,
+          35.578033462204296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "望都县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.14427185058592,
+          38.70855351447061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "海兴县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.49191284179688,
+          38.14319750166766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "南皮县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.69952392578124,
+          38.04430586642022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "吉安县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.90875244140624,
+          27.04200293656626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "万州区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.39660644531249,
+          30.812628584773705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "黔江区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.77288818359375,
+          29.534034720259523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "武隆区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75527954101562,
+          29.33070655993795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "丰都县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72369384765625,
+          29.870419710858783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "秀山土家族苗族自治县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.00909423828125,
+          28.455410938077357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "南部县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.03317260742188,
+          31.346600164871635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "广安区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6278076171875,
+          30.462879341709886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "赤水市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6939697265625,
+          28.589345223446188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "城关区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.83110046386719,
+          36.063809372490276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "卡若区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.16583251953125,
+          31.16580958786196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "巴宜区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.2132568359375,
+          29.257648503615542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "亚东县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.89999389648438,
+          27.499744856370658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "乃东区"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.71915054321288,
+          26.58760610079104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "河南蒙古族自治县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.61117553710938,
+          34.73032697882122
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "同德县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.57708740234375,
+          35.26916816256374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "茫崖市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.8466339111328,
+          38.25435798036572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "都兰县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.1134033203125,
+          36.29741818650811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "大柴旦行政委员会"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.36956787109375,
+          37.85750715625203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "巴里坤哈萨克自治县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.02261352539062,
+          43.598295002627175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "民丰县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.694091796875,
+          37.13404537126446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "察布查尔锡伯自治县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.134033203125,
+          43.83452678223682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "托里县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.5894775390625,
+          45.9587876403564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "青河县"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.37353515625,
+          46.68713141244413
+        ]
+      }
+    }
+  ]
+}
