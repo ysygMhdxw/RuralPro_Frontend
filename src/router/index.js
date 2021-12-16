@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import CountyEcharts from '../views/CountyEcharts.vue'
 import HomePage from "@/views/HomePage";
-import BodyMap from "@/components/BodyMap";
+import county from "@/views/County";
+import Population from "@/views/Population";
 
 
 const routes = [
@@ -11,14 +12,20 @@ const routes = [
     component: HomePage
   },
   {
-    path: "/HomePage",
-    name: "HomePage",
-    component: Home
+    path: "/CountyEcharts",
+    name: "CountyEcharts",
+    component: CountyEcharts
   },
   {
-    path:"/Map",
-    name:"BodyMap",
-    component: BodyMap
+    path:"/County",
+    name:"County",
+    component: county
+  }
+  ,
+  {
+    path:"/population",
+    name:"population",
+    component: Population
   }
 ]
 

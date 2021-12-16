@@ -7,7 +7,7 @@
       <el-col class="column" :span="2" >
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5">
+        <button class="custom-btn btn-5" @click="gotopopulation">
           <img src="../assets/img/population.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>人口</span>
         </button>
@@ -61,7 +61,6 @@
 
 <script>
 import {Location} from '@element-plus/icons'
-
 export default {
   name: "NavigationBar",
   components: {
@@ -81,7 +80,10 @@ export default {
     window.removeEventListener("scroll", this.watchScroll);
   },
   methods: {
-
+    gotopopulation(){
+      this.$router.replace("/population")
+    }
+    ,
     watchScroll() {
 
       // 滚动的距离
@@ -99,6 +101,8 @@ export default {
       } else {
         this.navBarFixed = false;
       }
+
+
     }
   }
 }
@@ -132,7 +136,7 @@ button {
   height: 50px;
   color: #fff;
   padding: 5px 5px;
-  font-family: "Brush Script MT", cursive;
+  font-family: 华文中宋;
   font-weight: 100;
   background: transparent;
   cursor: pointer;
@@ -220,6 +224,7 @@ button {
 
 .nav a {
   text-decoration: none;
+  font-family: 华文中宋;
 }
 
 .column> ul > li > a {
