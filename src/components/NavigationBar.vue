@@ -8,47 +8,47 @@
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5" @click="gotopopulation">
-          <img src="../assets/img/population.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>人口</span>
+          <img src="../assets/img/official.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
+          <span>减贫政策</span>
         </button>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-2">
-          <img src="../assets/img/economy.svg" width="25" height="27" style="padding-top:8px;padding-right: 4px"/>
-          <span>经济</span>
+          <img src="../assets/img/povertydvlopTime.svg" width="25" height="27" style="padding-top:8px;padding-right: 4px"/>
+          <span>减贫岁月</span>
         </button>
-        <ul>
-          <li><a href="">经济核算</a></li>
-          <li><a href="">公共财政和投资发展</a></li>
-          <li><a href="">市场消费</a></li>
-        </ul>
+<!--        <ul>-->
+<!--          <li><a href="">经济核算</a></li>-->
+<!--          <li><a href="">公共财政和投资发展</a></li>-->
+<!--          <li><a href="">市场消费</a></li>-->
+<!--        </ul>-->
 
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-3">
-          <img src="../assets/img/livelihood.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>民生</span>
+          <img src="../assets/img/story.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
+          <span>减贫故事</span>
         </button>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-4">
           <img src="../assets/img/county.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>农业和农村</span>
+          <span>数说减贫</span>
         </button>
         <ul>
-          <li><a href="">农业</a></li>
-          <li><a href="">农村基本情况</a></li>
+          <li><a href="">减贫数据纵览</a></li>
+          <li><a href="">减贫可视化数据</a></li>
         </ul>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-5">
-          <img src="../assets/img/industry.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>工业</span>
+          <img src="../assets/img/information.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
+          <span>减贫资讯</span>
         </button>
-        <ul>
-          <li><a href="">工业产品</a></li>
-          <li><a href="">工业企业</a></li>
-        </ul>
+<!--        <ul>-->
+<!--          <li><a href="">工业产品</a></li>-->
+<!--          <li><a href="">工业企业</a></li>-->
+<!--        </ul>-->
 
       </el-col>
 
@@ -114,7 +114,7 @@ export default {
 .nav {
   position: absolute;
   background-color: rgba(249, 249, 249, 0.77);
-  top: 85%;
+  top: 700px;
   width: 100%;
   height: 60px;
   margin-top: 0px;

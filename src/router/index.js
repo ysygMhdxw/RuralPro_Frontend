@@ -3,6 +3,7 @@ import CountyEcharts from '../views/CountyEcharts.vue'
 import HomePage from "@/views/HomePage";
 import county from "@/views/County";
 import Population from "@/views/Population";
+import TimeLineHome from "@/components/TimeLineHome";
 
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
     path:"/population",
     name:"population",
     component: Population
+  },
+  {
+    path:"/timeline",
+    name:"timeline",
+    component:TimeLineHome
   }
 ]
 
