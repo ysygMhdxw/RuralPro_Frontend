@@ -7,7 +7,7 @@
       <el-col class="column" :span="2" >
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5" @click="gotopopulation">
+        <button class="custom-btn btn-5" @click="gotoformalpage">
           <img src="../assets/img/official.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>减贫政策</span>
         </button>
@@ -80,8 +80,8 @@ export default {
     window.removeEventListener("scroll", this.watchScroll);
   },
   methods: {
-    gotopopulation(){
-      this.$router.replace("/population")
+    gotoformalpage(){
+      this.$router.replace("/formal")
     }
     ,
     watchScroll() {

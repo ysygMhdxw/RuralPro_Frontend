@@ -1,14 +1,6 @@
 <template>
   <div class="homepage">
     <el-container style="padding:0">
-<!--      <div class="searchbar" style="height: 60px;padding:0px">-->
-<!--        <el-row class="title" >-->
-<!--          <el-col :span="6" style="background-color: #A47DCB; height: 60px">标志</el-col>-->
-<!--          <el-col :span="6"></el-col>-->
-<!--          <el-col :span="6"></el-col>-->
-<!--          <el-col :span="6" style="background-color: #F9B900; height: 60px">searchbar</el-col>-->
-<!--        </el-row>-->
-<!--      </div>-->
       <el-header class="header" style="height:700px; padding: 0px">
       <BackgroundPic style="margin: 0px; position:fixed;padding: 0px"/>
       </el-header>
@@ -36,24 +28,30 @@
        </el-main>
 
       <el-main class="map" style="background-color: #FFFFFF; position: relative; margin: 0;padding: 0">
-        <p style="font-size: 30px;font-family: 华文中宋;color:#000000;text-shadow: 2px 2px #f6f6f6;padding: 0;margin: 0">减贫地图</p>
-          <p style="font-size: 200px;color: #BD3131;border:3px #BD3131;margin: 0;line-height: 5px;margin-bottom: 50px">—</p>
+        <p style="font-size: 30px;font-family: 华文中宋;color:#000000;text-shadow: 2px 2px #f6f6f6;padding: 0;margin-top: 20px">减贫地图</p>
+          <p style="font-size: 200px;color: #BD3131;border:3px #BD3131;line-height: 5px;margin-bottom: 50px">—</p>
+        <p style="font-family: 华文中宋;color:#BD3131;font-size:30px;font-weight: bold;left:250px;position: absolute">832个国家扶贫开发重点工作县</p>
         <el-col  :span="12" style="background-color:#FFFFFF;margin-left: 200px; margin-top:60px;border: 2px solid #BD3131;border-radius: 10%">
-            <BodyMap />
+          <BodyMap />
+          <p style="color: #BD3131;font-family: 华文中宋;">点击具体贫困县，进入贫困县主页</p>
         </el-col>
         <el-col :span="12" >
-          <div class="provinceTab" style="margin-top: 65px;margin-left:150px;width: 150px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
-            <el-select v-model="value" clearable placeholder="Select">
-              <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value"
-              >
-              </el-option>
-            </el-select>
+          <div class="provinceTab" style="margin-top: 65px;margin-left:200px;width: 150px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
+           <SelectProvinceHome/>
           </div>
-          <div class="countyTab">县的简介</div>
+          <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:200px;width: 400px;height: 200px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
+            <p>云南简称“云”或“滇”，地处中国西南边陲，位于东经97°31'～106°11'和北纬21°8'～29°15'之间，北回归线横贯南部。总面积39.41万平方千米，占全国总面积的4.1%。东与广西壮族自治区和贵州省毗邻，北以金沙江为界与四川省隔江相望，西北隅与西藏自治区相邻近，西部与缅甸相邻，南部和东南部分别与老挝、越南接壤。
+            </p>
+          </div>
+
+          <div class="countyTab">
+            <div class="provinceTab" style="margin-top:40px;margin-left:200px;width: 190px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
+            <SelectCountyHome/>
+            </div>
+            <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:200px;width:400px;height: 280px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
+
+            </div>
+          </div>
 
         </el-col>
       </el-main>
@@ -71,10 +69,14 @@ import NavigationBar from "@/components/NavigationBar";
 import BackgroundPic from "@/components/BackgroundPic";
 import {} from "../assets/css/global.css"
 import TimeLineHome from "@/components/TimeLineHome";
+import SelectProvinceHome from "@/components/SelectProvinceHome";
+import SelectCountyHome from "@/components/SelectCountyHome";
 
 export default {
   name: "HomePage",
   components: {
+    SelectCountyHome,
+    SelectProvinceHome,
     TimeLineHome,
     BackgroundPic,
     GithubCorner,
@@ -83,35 +85,20 @@ export default {
     NavigationBar
   },
   data(){
-    return{
-      options: [
-        {
-          value: 'Option1',
-          label: 'Option1',
-        },
-        {
-          value: 'Option2',
-          label: 'Option2',
-        },
-        {
-          value: 'Option3',
-          label: 'Option3',
-        },
-        {
-          value: 'Option4',
-          label: 'Option4',
-        },
-        {
-          value: 'Option5',
-          label: 'Option5',
-        },
-      ]
-    }
+    return {}
   },
   mounted() {
 
   },
   methods:{
+    back(){
+      if (window.history.length <= 1) {
+        this.$router.push({path:'/'})
+        return false
+      } else {
+        this.$router.go(-1)
+      }
+    }
   }
 }
 
@@ -336,64 +323,4 @@ h1 {
 }
 
 
-/*//修改的是el-input的样式*/
-/*//一种方法是设置最里层el-input__inner的背景色 外层的两级父元素设置为透明色*/
-/*//另一种方法是从el-select到el-input__inenr的背景色都设置为需要的颜色*/
-  /deep/ .el-select,
-  /deep/ .el-input,
-  /deep/ .el-input__inner{
-    background-color:#BD3131 ;
-    color:#fff;
-    text-decoration-color: #FFFFFF;
-    border:0px;
-    width: 40px;
-    border-radius:0px;
-    text-align: center;
-  }
-/deep/.el-input__inner {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border: 1px solid #a1a3ad;
-  border-left-width: 0;
-  background-color: #BD3131;
-  --el-input-placeholder-color: #FFFFFF;
-  font-family: PingFangSC-Regular;
-  font-size: 0.28rem;
-  --el-input-text-color: #FFFFFF;
-  color: #FFFFFF;
-}
-/*//el-input聚焦的时候 外层的border会有一个样式*/
-  /deep/ .el-select .el-input.is-focus .el-input__inner{
-    border:0px;
-  }
-
-/*//修改的是el-input上下的小图标的颜色*!*!*/
-/*  /deep/ .el-select .el-input .el-select__caret{*/
-/*    color:#fff;*/
-/*  }*/
-
-/*//修改总体选项的样式 最外层*!*!*/
-/*  /deep/ .el-select-dropdown{*/
-/*    background-color: #08164d;*/
-/*    margin: 0px;*/
-/*    border:0px;*/
-/*    border-radius: 0px;*/
-/*  }*/
-
-/*//修改单个的选项的样式*!*!*/
-/*  /deep/ .el-select-dropdown__item{*/
-/*    background-color: transparent;*/
-/*    color:#fff;*/
-/*  }*/
-
-/*//item选项的hover样式*!*!*/
-/*  /deep/ .el-select-dropdown__item.hover,*/
-/*  /deep/ .el-select-dropdown__item:hover{*/
-/*    color:#409eff;*/
-/*  }*/
-
-/*//修改的是下拉框选项内容上方的尖角*!*!*/
-/*  /deep/ .el-popper .popper__arrow, .el-popper .popper__arrow::after{*/
-/*    display: none;*/
-/*  }*/
 </style>

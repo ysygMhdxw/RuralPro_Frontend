@@ -7,7 +7,7 @@
       <div class="fontTitle" style="position:relative;left: 150px;top: 40px">
         <h1 style="font-size: 50px;font-family: 华文中宋;color:#BD3131;text-shadow: 2px 2px #f6f6f6">心心乡惜</h1>
       </div>
-      <div style="position:relative;left: 1700px;top: 0px">
+      <div style="position:relative;left: 1300px;top: 0px">
         <form id="content">
           <input type="text" name="input" class="input" id="search-input">
           <button type="reset" class="search" id="search-btn"></button>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <video id="v1" autoplay loop muted>
-      <source src="../assets/video/demobg_Trim_1.mp4" style="height:100%;width:100%;margin: 0px;padding: 0px" type="video/mp4" />
+      <source src="../assets/video/demobg_Trim_1.mp4" style="height:100%;width:1516px;margin: 0px;padding: 0px" type="video/mp4" />
     </video>
 <!--    <el-image :src="src" ></el-image>-->
   </div>

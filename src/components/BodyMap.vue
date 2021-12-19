@@ -1,9 +1,10 @@
 <template>
   <div>
+
     <div style="width: 800px;height:600px;" id="world">
     </div>
     <el-row>
-      <el-col :span="2" style="margin-left: 100px">
+      <el-col :span="2" style="margin-left: 130px">
         <div>
           <el-button type="primary" style="background-color: #f1939c;border: #f1939c" circle><el-icon @click.native="playMap()"><video-play /></el-icon></el-button>
         </div>

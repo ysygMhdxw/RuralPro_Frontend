@@ -4,6 +4,7 @@ import HomePage from "@/views/HomePage";
 import county from "@/views/County";
 import Population from "@/views/Population";
 import TimeLineHome from "@/components/TimeLineHome";
+import FormalPage from "@/views/FormalPage";
 
 
 const routes = [
@@ -24,9 +25,9 @@ const routes = [
   }
   ,
   {
-    path:"/population",
-    name:"population",
-    component: Population
+    path:"/formal",
+    name:"formal",
+    component: FormalPage
   },
   {
     path:"/timeline",
