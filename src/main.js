@@ -9,6 +9,7 @@ import * as echarts from 'echarts';
 import * as ElIcons from '@element-plus/icons';
 
 
+
 const app=createApp(App)
 for (const name in ElIcons){
     app.component(name,ElIcons[name])

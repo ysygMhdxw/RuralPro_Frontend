@@ -13,7 +13,7 @@
         </button>
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-2">
+        <button class="custom-btn btn-5 btn-5-2" @click="gototimelinepage">
           <img src="../assets/img/povertydvlopTime.svg" width="25" height="27" style="padding-top:8px;padding-right: 4px"/>
           <span>减贫岁月</span>
         </button>
@@ -80,6 +80,10 @@ export default {
     window.removeEventListener("scroll", this.watchScroll);
   },
   methods: {
+    gototimelinepage(){
+      this.$router.replace("/unfinished")
+    }
+    ,
     gotoformalpage(){
       this.$router.replace("/formal")
     }

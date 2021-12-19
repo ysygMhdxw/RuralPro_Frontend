@@ -27,7 +27,7 @@
           <a href="http://f.china.com.cn/"
              style="text-decoration: none;font-family: 华文中宋;font-size:50px;font-weight: bold;color: #FFFFFF">中国扶贫网</a>
           <p style="color: #FFFFFF;text-align: left">
-            中国扶贫网是中国扶贫办的一个官方网站，是由国务院扶贫办主管，国务院扶贫办全国贫困地区干部培训中心主办，是国内报道扶贫层面最权威性的大型刊物。我们的办刊宗旨是宣传党中央、国务院及各级党委、政府扶贫政策与扶贫经验，报道扶贫及其他公益慈善搭领域新闻事件，分析探讨扶贫理论及扶贫战略，反映国际扶贫动态，建国内扶贫组织与国际扶贫机构的沟通交流平台，推动我国扶贫公益事业的发展。
+            中国扶贫网是中国扶贫办的一个官方网站，办刊宗旨是宣传党中央、国务院及各级党委、政府扶贫政策与扶贫经验，报道扶贫及其他公益慈善搭领域新闻事件，分析探讨扶贫理论及扶贫战略，反映国际扶贫动态，建国内扶贫组织与国际扶贫机构的沟通交流平台，推动我国扶贫公益事业的发展。
           </p>
         </div>
         <!--      <img src="picCarousel({{item}})" />-->
@@ -46,21 +46,21 @@ export default {
   mounted() {
     if (window.history && window.history.pushState) {
       history.pushState(null, null, document.URL); //这里有没有都无所谓，最好是有以防万一
-      window.addEventListener('popstate', this.back(), false);
+      window.addEventListener('popstate', this.back, false);
       // 回退时执行goback方法
     }
+  },
+  destroyed(){
+    window.removeListener('popstate', this.back,false)
   },
   data() {
     return {}
   },
   methods: {
     back(){
-      if (window.history.length <= 1) {
-        this.$router.push({path:'/'})
-        return false
-      } else {
-        this.$router.go(-1)
-      }
+      //无法实现
+      this.$emit('change',false)
+
     }
   }
 }

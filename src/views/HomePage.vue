@@ -88,7 +88,11 @@ export default {
     return {}
   },
   mounted() {
-
+    if (window.history && window.history.pushState) {
+      history.pushState(null, null, document.URL); //这里有没有都无所谓，最好是有以防万一
+      window.addEventListener('popstate', this.back, false);
+      // 回退时执行goback方法
+    }
   },
   methods:{
     back(){
