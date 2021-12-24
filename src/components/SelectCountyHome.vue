@@ -158,7 +158,7 @@ export default {
   background-color: #BD3131;
   --el-input-placeholder-color: #FFFFFF;
   font-family: PingFangSC-Regular;
-  font-size: 0.28rem;
+  font-size: 0.5rem;
   --el-input-text-color: #FFFFFF;
   color: #FFFFFF;
 }

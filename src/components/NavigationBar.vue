@@ -1,62 +1,53 @@
 <template>
 
-  <div id="nav" class="nav" v-bind:style="top=margin+'px'" :class="{
-     'fix-nav': navBarFixed}">
+    <div id="nav" class="nav" :class = "{'nav-top': navBox.active}"
+         :style = "top = navBox.top" @load = "navLoad">
 
-    <el-row class="title" style="align-content: center">
-      <el-col class="column" :span="2" >
-      </el-col>
-      <el-col class="column" :span="4">
-        <button class="custom-btn btn-5" @click="gotoformalpage">
-          <img src="../assets/img/official.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>减贫政策</span>
-        </button>
-      </el-col>
-      <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-2" @click="gototimelinepage">
-          <img src="../assets/img/povertydvlopTime.svg" width="25" height="27" style="padding-top:8px;padding-right: 4px"/>
-          <span>减贫岁月</span>
-        </button>
-<!--        <ul>-->
-<!--          <li><a href="">经济核算</a></li>-->
-<!--          <li><a href="">公共财政和投资发展</a></li>-->
-<!--          <li><a href="">市场消费</a></li>-->
-<!--        </ul>-->
+      <ul class="title">
+        <li class="column li1">
+          <div class="nav1" @click = "gotoformalpage">
+            <img src="../assets/img/official.svg" alt="减贫政策">
+            <span class="nav1-item">减贫政策</span>
+          </div>
+        </li>
 
-      </el-col>
-      <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-3" @click="gotoProvertyStory">
-          <img src="../assets/img/story.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>减贫故事</span>
-        </button>
-      </el-col>
-      <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-4">
-          <img src="../assets/img/county.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>数说减贫</span>
-        </button>
-        <ul>
-          <li><a href="">减贫数据纵览</a></li>
-          <li><a href="" @click="gotoProvertyData">减贫可视化数据</a></li>
-        </ul>
-      </el-col>
-      <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-5">
-          <img src="../assets/img/information.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
-          <span>减贫资讯</span>
-        </button>
-<!--        <ul>-->
-<!--          <li><a href="">工业产品</a></li>-->
-<!--          <li><a href="">工业企业</a></li>-->
-<!--        </ul>-->
+        <li class="column li2">
+          <div class="nav1" @click = "gototimelinepage">
+            <img src="../assets/img/povertydvlopTime.svg" alt="减贫岁月">
+            <span class="nav1-item">减贫岁月</span>
+          </div>
+        </li>
 
-      </el-col>
+        <li class="column li3">
+          <div class="nav1" @click = "gotoProvertyStory">
+            <img src="../assets/img/story.svg" alt="减贫故事">
+            <span class="nav1-item">减贫故事</span>
+          </div>
+        </li>
 
-      <el-col class="column" :span="2">
-      </el-col>
+        <li class="column li4" @mouseover = "navShow" @mouseout = "navHide">
+          <div class="nav1">
+            <img src="../assets/img/county.svg" alt="数说减贫">
+            <span class="nav1-item">数说减贫</span>
+          </div>
+          <div class="dl dl4" :style = "{'display':navBox.display}">
+            <div class="dd">
+              <span>减贫数据纵览</span>
+            </div>
+            <div class="dd" @click="gotoProvertyData">
+              <span>减贫可视化数据</span>
+            </div>
+          </div>
+        </li>
 
-    </el-row>
-  </div>
+        <li class="column li5">
+          <div class="nav1">
+            <img src="../assets/img/information.svg" alt="减贫资讯">
+            <span class="nav1-item">减贫资讯</span>
+          </div>
+        </li>
+      </ul>
+    </div>
 </template>
 
 <script>
@@ -67,12 +58,17 @@ export default {
     Location
   },
   mounted() {
-    window.addEventListener('scroll', this.watchScroll)
+    window.addEventListener('scroll', this.watchScroll);
   },
   data() {
     return {
-      margin: 1000,
-      navBarFixed: false,
+      navBox: {
+        top: '89vh',
+        height: 0,
+        active: false,
+        display: 'none'
+      },
+      isHover: false
     };
   },
   destroyed() {
@@ -95,167 +91,244 @@ export default {
       this.$router.replace("/formal")
     }
     ,
+    navLoad(){
+      this.navBox.height = $('.nav').height();
+      this.navBox.overflow = 'hidden';
+    }
+    ,
+    navShow(){
+      this.navBox.display = 'block';
+    }
+    ,
+    navHide(){
+      this.navBox.display = 'none';
+    }
+    ,
     watchScroll() {
-
-      // 滚动的距离
-      var scrollTop =
-          window.pageYOffset ||
+      let scrollTop =
           document.documentElement.scrollTop ||
           document.body.scrollTop;
-      // 容器的高度
-      var offsetTop = document.querySelector("#nav").offsetHeight;
 
-      console.log("scrollTop=>", scrollTop, "  offsetTop=>", offsetTop);
-      //  滚动的距离如果大于了元素到顶部的距离时，实现吸顶效果
-      if (scrollTop > offsetTop) {
-        this.navBarFixed = true;
-      } else {
-        this.navBarFixed = false;
+      if (scrollTop > 10) {
+        this.navBox.top = '0';
+        this.navBox.active = true;
       }
-
-
+      else {
+        this.navBox.top = this.navBox.height + 'px';
+        this.navBox.active = false;
+      }
     }
+
   }
 }
 
 </script>
 
 <style scoped>
-/* 导航 */
-.nav {
-  position: absolute;
-  background-color: rgba(249, 249, 249, 0.77);
-  top: 700px;
-  width: 100%;
-  height: 60px;
-  margin-top: 0px;
+
+li {
+  list-style: none;
 }
 
-/* 固定导航 */
-.fix-nav {
+.nav-active {
+  float: left;
+  width: 87.5%;
   position: fixed;
-  top: 0;
-  z-index: 999;
+  left: 6.25%;
+  z-index: 42345;
+  top: 89vh;
 }
 
-button {
-  margin: 10px;
+.nav-active li {
+  float: left;
+  width: 20%;
+  height: 100%;
+  margin: 0;
 }
 
-.custom-btn {
-  width: 250px;
-  height: 50px;
+.nav {
+  width: 87.5%;
+  position: fixed;
+  left: 6.25%;
+  z-index: 42345;
+  top: 89vh;
+}
+
+.nav ul {
+  height: 89vh;
+}
+
+.nav li {
+  float: left;
+  width: 20%;
+  margin: 0;
+}
+
+.nav img {
+  position: relative;
+  left: -15px;
+  top: 6px;
+  width: 25px;
+}
+
+/* .li2 {
+  height: 114px;
+} */
+
+.li4 {
+  height: 80px;
+}
+
+/* .li5 {
+  height: 76px;
+} */
+
+.nav1-item {
+  line-height: 57px;
+  text-decoration: none;
   color: #fff;
-  padding: 5px 5px;
-  font-family: 华文中宋;
-  font-weight: 100;
+}
+
+.nav1 {
+  width: 98%;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
   background: transparent;
-  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-  7px 7px 20px 0px rgba(0, 0, 0, .1),
-  4px 4px 5px 0px rgba(0, 0, 0, .1);
-  outline: none;
-}
-
-/* 5 */
-.btn-5 {
-  width: 300px;
-  height: 50px;
-  font-size: 20px;
-  line-height: 40px;
-  padding: 0;
-  margin: 2px;
   border: none;
-  background-color: #f0ecfc;
-  background-image: linear-gradient(315deg, #e3b4b8 0%, #f1939c 74%);
-}
-
-.btn-5-2 {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+  7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(315deg, #f1939c 0%, #e3b4b8 74%);
 }
 
-.btn-5-3 {
-  background-image: linear-gradient(315deg, #e3b4b8 0%, #f1939c 74%);
-}
-
-.btn-5-4 {
-  background-image: linear-gradient(315deg, #f1939c 0%, #e3b4b8 74%);
-}
-
-.btn-5-5 {
-  background-image: linear-gradient(315deg, #e3b4b8 0%, #f1939c 74%);
-}
-
-.btn-5:hover {
-  color: #FFFFFF;
-  background: #BD3131;
+.nav1:hover {
+  background: #bd3131;
   opacity: 90%;
   box-shadow: none;
+  cursor: pointer;
 }
 
-.btn-5:before,
-.btn-5:after {
-  content: '';
+.nav1:before,
+.nav1:after {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   height: 2px;
   width: 0;
-  background: #a7535a;
-  box-shadow: /*-1px -1px 5px 0px #fff,*/ 7px 7px 20px 0px #0003,
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
   4px 4px 5px 0px #0002;
   transition: 400ms ease all;
 }
 
-.btn-5:after {
+.nav1:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
 
-.btn-5:hover:before,
-.btn-5:hover:after {
+.nav1:hover:before,
+.nav1:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
 
-.column:hover ul {
-  display: block;
+/* 导航栏吸顶 */
+
+.nav-top {
+  animation: navshow2 1s ease;
+  animation-fill-mode: forwards;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
-.column> ul {
+@keyframes navshow2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 响应式布局：分辨率宽度小于1000px导航栏消失 */
+
+@media screen and (max-width: 1000px) {
+  .nav {
+    display: none;
+  }
+}
+
+.dl {
   position: absolute;
-  display: none;
+  bottom: 89vh;
+  font-size: 12px;
+  background: #fff;
+  border: solid 1px #aaa;
+  border-bottom: none;
+  width: 19.5%;
+  /*-webkit-transition: height 200ms ease-in;*/
+  /*-moz-transition: height 200ms ease-in;*/
+  /*-o-transition: height 200ms ease-in;*/
+  /*transition: height 200ms ease-in;*/
+  /*border-radius: 5px 5px 0 0;*/
 }
 
+.dd {
+  height: 40px;
+  border-bottom: solid 1px #aaa;
+  text-align: center;
+  /*border-radius: 5px;*/
+}
 
-.nav a {
-  text-decoration: none;
+.dd:last-child {
+  border-bottom: none;
+}
+
+.dd:hover {
+  height: 40px;
+  background-color: #BD3131;
+}
+
+.dd:hover span {
+  color: #FFFFFF;
+}
+
+.dd span {
+  line-height: 40px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #456;
   font-family: 华文中宋;
 }
 
-.column> ul > li > a {
-  margin-left: 10px;
-  width: 300px;
-  line-height: 40px;
-  color: #456;
-  background-color: #FFFFFF;
-  text-align: center;
+.nav-top .dl {
+  position: absolute;
+  font-size: 12px;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-top: none;
-  display: block;
+  width: 19.5%;
+  /*border-radius: 0 0 5px 5px;*/
 }
-.column> ul > li>a:hover {
-  color: #FFFFFF;
-  background-color: #BD3131;
-  height: 40px;
+
+.nav-top .dd:first-child {
+  border-top: none;
 }
-ul{
-  list-style: none;
+
+/* .nav-top .dl2 {
+  top: 57px;
+  height: 114px;
+} */
+
+.nav-top .dl4 {
+  top: 57px;
+  height: 80px;
 }
 
 </style>

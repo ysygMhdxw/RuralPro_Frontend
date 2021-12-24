@@ -1,7 +1,7 @@
 <template>
 <div style="margin: 0px;padding: 0px">
 
-  <canvas id="caibaojian" width="1903" height="860" style="margin: 0">时间</canvas>
+  <canvas id="caibaojian" width="1000px" height="860" style="margin: 0">时间</canvas>
   <el-card class="card" shadow="always" style="position: absolute; width: 460px; height:300px;z-index: 99;top: 250px;left: 670px;margin: 0;padding: 30px">
    <h2 style="font-family: 华文中宋;font-size: 40px"><span style="color: #BD3131">致</span>远方</h2>
     <h1>包葵阳</h1>
@@ -9,7 +9,6 @@
     <p>你坚守在北风的猴场</p>
     <p>你守着重荫山和月亮</p>
     <p>还有炊烟和童年的梦想</p>
-
   </el-card>
 </div>
 </template>

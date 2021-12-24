@@ -14,10 +14,9 @@
         </form>
       </div>
     </div>
-    <video id="v1" autoplay loop muted>
-      <source src="../assets/video/demobg_Trim_1.mp4" style="height:100%;width:1516px;margin: 0px;padding: 0px" type="video/mp4" />
+    <video id="v1" autoplay loop muted style="width: 100%;">
+      <source src="../assets/video/demobg_Trim_1.mp4" style="width:100%;margin: 0px;padding: 0px" type="video/mp4" />
     </video>
-<!--    <el-image :src="src" ></el-image>-->
   </div>
 </template>
 
