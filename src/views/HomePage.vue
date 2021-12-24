@@ -1,11 +1,11 @@
 <template>
-  <div class="homepage">
-    <el-container style="padding:0">
-      <el-header class="header" style="height:700px; padding: 0px">
-      <BackgroundPic style="margin: 0px; position:fixed;padding: 0px"/>
+  <div class="homepage" style="width: 100%">
+    <el-container style="width: 100%; padding:0">
+      <el-header class="header" style="width: 100%; height:700px; padding: 0px">
+      <BackgroundPic style="width: 100%; margin: 0px; position:fixed; padding: 0px"/>
       </el-header>
       <el-main style="height: 50px;padding-left: 0;padding-right: 0">
-        <NavigationBar style="width: 100%;"/>
+        <NavigationBar/>
       </el-main>
 
       <el-main class="TimelineMain" style="background-color:#FFFFFF;padding-top:0px;padding-bottom:0px;padding-right: 50px;padding-left:50px; margin:0;height:100%;position: relative">
@@ -32,25 +32,25 @@
       <el-main class="map" style="background-color: #FFFFFF; position: relative; margin: 0;padding: 0">
         <p style="font-size: 30px;font-family: 华文中宋;color:#000000;text-shadow: 2px 2px #f6f6f6;padding: 0;margin-top: 20px">减贫地图</p>
           <p style="font-size: 200px;color: #BD3131;border:3px #BD3131;line-height: 5px;margin-bottom: 50px">—</p>
-        <p style="font-family: 华文中宋;color:#BD3131;font-size:30px;font-weight: bold;left:250px;position: absolute">832个国家扶贫开发重点工作县</p>
-        <el-col  :span="12" style="background-color:#FFFFFF;margin-left: 200px; margin-top:60px;border: 2px solid #BD3131;border-radius: 10%">
+        <p style="font-family: 华文中宋;color:#BD3131;font-size:30px;font-weight: bold;left:300px;position: absolute">832个国家扶贫开发重点工作县</p>
+        <el-col  :span="12" style="background-color:#FFFFFF;margin-left: 160px; margin-top:60px;border: 2px solid #BD3131;border-radius: 10%">
           <BodyMap />
           <p style="color: #BD3131;font-family: 华文中宋;">点击具体贫困县，进入贫困县主页</p>
         </el-col>
         <el-col :span="12" >
-          <div class="provinceTab" style="margin-top: 65px;margin-left:200px;width: 150px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
+          <div class="provinceTab" style="margin-top: 65px;margin-left:90px;width: 120px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
            <SelectProvinceHome/>
           </div>
-          <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:200px;width: 400px;height: 200px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
+          <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:90px;width: 400px;height: 200px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
             <p>云南简称“云”或“滇”，地处中国西南边陲，位于东经97°31'～106°11'和北纬21°8'～29°15'之间，北回归线横贯南部。总面积39.41万平方千米，占全国总面积的4.1%。东与广西壮族自治区和贵州省毗邻，北以金沙江为界与四川省隔江相望，西北隅与西藏自治区相邻近，西部与缅甸相邻，南部和东南部分别与老挝、越南接壤。
             </p>
           </div>
 
           <div class="countyTab">
-            <div class="provinceTab" style="margin-top:40px;margin-left:200px;width: 190px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
+            <div class="provinceTab" style="margin-top:40px;margin-left:90px;width: 120px;height: 50px;border-radius:10px;background-color: #BD3131;color: #FFFFFF">
             <SelectCountyHome/>
             </div>
-            <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:200px;width:400px;height: 280px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
+            <div style="margin-top: 30px;text-align:left;padding:10px;margin-left:90px;width:400px;height: 250px;border-radius:10px;border:3px solid  #BD3131;color: #000000">
 
             </div>
           </div>
@@ -89,6 +89,7 @@ export default {
   data(){
     return {
 
+      bodyWidth: 0
     }
   },
   mounted() {

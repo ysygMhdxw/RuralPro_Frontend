@@ -1,8 +1,7 @@
 <template>
   <div>
 
-    <div style="width: 800px;height:600px;" id="world">
-    </div>
+    <div style="width: 800px;height:580px;" id="world"></div>
     <el-row>
       <el-col :span="2" style="margin-left: 130px">
         <div>
@@ -274,7 +273,6 @@ export default {
 <style scoped>
 .progressStep {
   margin-left: 2px;
-
 }
 
 </style>
