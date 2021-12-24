@@ -2,9 +2,9 @@
   <a class="card" :href="url" style="margin-top: 50px;margin-right: 10px;margin-left: 10px">
     <div class="card__background" :style="{backgroundImage: 'url(' + picUrl + ')', backgroundSize:'cover'}">
     </div>
-    <div class="card__content">
-      <p class="card__category" style="font-family: 华文中宋;color: #FFFFFF">{{content}}</p>
-      <h3 class="card__heading" style="font-family: 华文中宋;color: #BD3131;font-size: 30px">{{name}}</h3>
+    <div class="card__content" style="bottom: 0;background-color: rgba(234,234,234,0.93)">
+      <h3 class="card__heading" style="font-family: 华文中宋;color: #752626;font-size: 20px">{{name}}</h3>
+      <p class="card__category" style="font-family: 华文中宋;color: #905E5E">{{content}}</p>
     </div>
   </a>
 </template>
@@ -67,7 +67,7 @@ export default {
   left: 0;
   padding: var(--spacing-l);
   position: absolute;
-  top: 2px;
+  bottom: 0;
   padding:30px;
 }
 
