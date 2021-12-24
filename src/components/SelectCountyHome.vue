@@ -14,8 +14,11 @@
 import { ref, defineComponent } from 'vue'
 export default {
   name: "SelectCountyHome",
+  mounted() {
+  },
   data(){
     return{
+      countydata:[],
       options: ref([
         {
           value: 'Yunnan',
@@ -132,7 +135,12 @@ export default {
         }
       ]),
       value:ref('')
-    }}
+    }},
+  methods:{
+    setCountyDescription(){
+
+    }
+  }
 }
 </script>
 

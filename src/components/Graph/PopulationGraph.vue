@@ -24,6 +24,7 @@ export default {
 
       option = {
         title: {
+          textAlign:"center",
           text: "2016年云南省主要城市人口",
         },
         tooltip: {

@@ -36,8 +36,8 @@
           <span>数说减贫</span>
         </button>
         <ul>
-          <li><a href="">减贫数据纵览</a></li>
-          <li><a href="" @click="gotoProvertyData">减贫可视化数据</a></li>
+          <li><a href=""  @click="gotoProvertyData">减贫数据纵览</a></li>
+          <li><a href="" >减贫可视化数据</a></li>
         </ul>
       </el-col>
       <el-col class="column" :span="4">
@@ -81,18 +81,18 @@ export default {
   },
   methods: {
     gotoProvertyStory(){
-      this.$router.replace("/povertyStory")
+      this.$router.push("/povertyStory")
     },
     gotoProvertyData(){
-      this.$router.replace("/dataVisualization")
+      this.$router.push("/DataOverview")
     }
     ,
     gototimelinepage(){
-      this.$router.replace("/unfinished")
+      this.$router.push("/unfinished")
     }
     ,
     gotoformalpage(){
-      this.$router.replace("/formal")
+      this.$router.push("/formal")
     }
     ,
     watchScroll() {

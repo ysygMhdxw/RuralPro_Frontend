@@ -24,7 +24,9 @@
               <TimeLineHome style="left: 100px;width: 100%"/>
             </div>
           </section>
+
         </div>
+
        </el-main>
 
       <el-main class="map" style="background-color: #FFFFFF; position: relative; margin: 0;padding: 0">
@@ -55,8 +57,8 @@
 
         </el-col>
       </el-main>
-      <el-main style="background-color: #FFFFFF;position: relative">Main</el-main>
-      <el-footer class="footer">@心心乡惜</el-footer>
+      <el-main style="background-color: #FFFFFF;position: relative"></el-main>
+      <el-footer class="footer"><p style="font-family: 华文中宋">@心心乡惜</p></el-footer>
     </el-container>
   </div>
 </template>
@@ -85,23 +87,21 @@ export default {
     NavigationBar
   },
   data(){
-    return {}
+    return {
+
+    }
   },
   mounted() {
-    if (window.history && window.history.pushState) {
-      history.pushState(null, null, document.URL); //这里有没有都无所谓，最好是有以防万一
-      window.addEventListener('popstate', this.back, false);
-      // 回退时执行goback方法
-    }
+
   },
   methods:{
     back(){
-      if (window.history.length <= 1) {
-        this.$router.push({path:'/'})
-        return false
-      } else {
-        this.$router.go(-1)
-      }
+      // if (window.history.length <= 1) {
+      //   this.$router.push({path:'/'})
+      //   return false
+      // } else {
+      //   this.$router.go(-1)
+      // }
     }
   }
 }

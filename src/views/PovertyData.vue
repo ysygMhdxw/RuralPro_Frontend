@@ -160,7 +160,7 @@ h1 {
 }
 
 /* Override UGG site */
-#main {
+#provinceGross {
   width: 100%;
   padding: 0;
 }

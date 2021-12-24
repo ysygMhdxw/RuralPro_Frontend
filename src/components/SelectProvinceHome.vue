@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="value" clearable placeholder="请选择相应的省份" style="margin-top: 8px">
+  <el-select v-model="value" clearable placeholder="云南省" style="margin-top: 8px">
     <el-option
         v-for="item in options"
         :key="item.value"
@@ -18,116 +18,116 @@ export default {
     return{
       options: ref([
         {
-          value: 'yunnan',
+          value: 'Yunnan',
           label: '云南省',
         },
         {
-          value: 'beijing',
+          value: 'Beijing',
           label: '北京市',
         },
         {
-          value: 'tianjin',
+          value: 'Tianjin',
           label: '天津省',
         },
         {
-          value: 'tianjin',
+          value: 'Hebei',
           label: '河北省',
         },
         {
-          value: 'tianjin',
+          value: 'Shanxi',
           label: '山西省',
         },
         {
-          value: 'tianjin',
+          value: 'Inner Mongoria',
           label: '内蒙古',
         },
         {
-          value: 'tianjin',
+          value: 'Liaoning',
           label: '辽宁省',
         },
         {
-          value: 'tianjin',
+          value: 'Jilin',
           label: '吉林省',
         },
         {
-          value: 'tianjin',
+          value: 'Heilongjiang',
           label: '黑龙江',
         },
         {
-          value: 'tianjin',
+          value: 'Shanghai',
           label: '上海市',
         },
         {
-          value: 'tianjin',
+          value: 'Jiangsu',
           label: '江苏省',
         },
         {
-          value: 'tianjin',
+          value: 'Zhejiang',
           label: '浙江省',
         },
         {
-          value: 'tianjin',
+          value: 'Anhui',
           label: '安徽省',
         },
         {
-          value: 'tianjin',
+          value: 'Fujian',
           label: '福建省',
         },
         {
-          value: 'tianjin',
+          value: 'Jiangxi',
           label: '江西省',
         },
         {
-          value: 'tianjin',
+          value: 'Henan',
           label: '河南省',
         },
         {
-          value: 'tianjin',
+          value: 'Sichuan',
           label: '四川省',
         },
         {
-          value: 'tianjin',
+          value: 'Chongqing',
           label: '重庆省',
         },
         {
-          value: 'tianjin',
+          value: 'Hainan',
           label: '海南省',
         },
         {
-          value: 'tianjin',
+          value: 'Guangxi',
           label: '广西省',
         },
         {
-          value: 'tianjin',
+          value: 'Hubei',
           label: '湖北省',
         },
         {
-          value: 'tianjin',
+          value: 'Guizhou',
           label: '贵州省',
         },{
-          value: 'tianjin',
+          value: 'Shanxi',
           label: '陕西省',
         },{
-          value: 'tianjin',
+          value: 'Gansu',
           label: '甘肃省',
         },{
-          value: 'tianjin',
+          value: 'Qinghai',
           label: '青海',
         },{
-          value: 'tianjin',
+          value: 'Xinjiang',
           label: '新疆',
         },{
-          value: 'tianjin',
+          value: 'Ningxia',
           label: '宁夏',
         },{
-          value: 'tianjin',
+          value: 'Taiwan',
           label: '台湾',
         },{
-          value: 'tianjin',
+          value: 'Hong Kong',
           label: '香港特别行政区',
         },
         {
-          value: 'tianjin',
+          value: 'Macao',
           label: '澳门特别行政区',
         }
       ]),

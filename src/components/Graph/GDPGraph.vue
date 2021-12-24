@@ -88,6 +88,7 @@ export default {
             ...datasetWithFilters,
           ],
           title: {
+            textAlign:"center",
             text: "2016~2020年云南省主要城市生产总值",
           },
           tooltip: {

@@ -1,6 +1,7 @@
 <template>
   <NavigationBar style="position: absolute;top: 0;z-index:999;"/>
   <StoryCard/>
+  <el-backtop />
 </template>
 
 <script>

@@ -4,7 +4,7 @@
     </div>
     <div class="card__content" style="bottom: 0;background-color: rgba(234,234,234,0.93)">
       <h3 class="card__heading" style="font-family: 华文中宋;color: #752626;font-size: 20px">{{name}}</h3>
-      <p class="card__category" style="font-family: 华文中宋;color: #905E5E">{{content}}</p>
+      <p class="card__category" style="color: #905E5E">{{content}}</p>
     </div>
   </a>
 </template>
@@ -43,7 +43,7 @@ export default {
   background-position: center;
   border-radius: var(--spacing-l);
   bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  filter: brightness(1.1) saturate(1.2) contrast(0.85);
   left: 0;
   position: absolute;
   right: 0;
@@ -60,7 +60,7 @@ export default {
 }
 
 .card-grid:hover > .card:not(:hover) .card__background{
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  filter: brightness(0.8) saturate(1) contrast(1.2) blur(0px);
 }
 
 .card__content{

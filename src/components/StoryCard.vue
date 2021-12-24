@@ -36,7 +36,7 @@ export default {
 <style scoped>
 
 :root{
-  --background-dark: #2d3548;
+  /*--background-dark: #2d3548;*/
   --text-light: rgba(255,255,255,0.6);
   --text-lighter: rgba(255,255,255,0.9);
   --spacing-s: 8px;
@@ -111,7 +111,7 @@ body{
   background-position: center;
   border-radius: var(--spacing-l);
   bottom: 0;
-  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  filter: brightness(1) saturate(1.2) contrast(1);
   left: 0;
   position: absolute;
   right: 0;
@@ -128,7 +128,7 @@ body{
 }
 
 .card-grid:hover > .card:not(:hover) .card__background{
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  filter: brightness(0.8) saturate(1) contrast(1.2) blur(2px);
 }
 
 .card__content{
