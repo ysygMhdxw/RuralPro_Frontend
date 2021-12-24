@@ -2,10 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import CountyEcharts from '../views/CountyEcharts.vue'
 import HomePage from "@/views/HomePage";
 import county from "@/views/County";
-import Population from "@/views/Population";
+import Population from "@/views/PovertyData";
 import TimeLineHome from "@/components/TimeLineHome";
 import FormalPage from "@/views/FormalPage";
 import page404 from "@/views/page404";
+import PovertyData from "@/views/PovertyData";
+import PovertyStory from "@/views/PovertyStory";
+import DataOverview from "@/views/DataOverview";
 
 
 const routes = [
@@ -39,6 +42,21 @@ const routes = [
     path:"/unfinished",
     name:"404page",
     component: page404
+  },
+  {
+    path:"/dataVisualization",
+    name:"PovertyData",
+    component: PovertyData
+  },
+  {
+    path:"/povertyStory",
+    name:"povertyStory",
+    component: PovertyStory
+  },
+  {
+    path:"/DataOverview",
+    name:"DataOverview",
+    component: DataOverview
   }
 ]
 

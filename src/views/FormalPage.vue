@@ -1,6 +1,6 @@
 <template>
-  <NavigationBar style="position: relative;top: 0"/>
-  <div>
+  <NavigationBar style="position: absolute;z-index:999;top: 0;"/>
+  <div style="margin-top: 80px">
     <el-carousel height="906px" :interval="2000" arrow="always">
       <el-carousel-item>
         <div class="textLabeltab">

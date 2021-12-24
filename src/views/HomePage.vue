@@ -123,7 +123,6 @@ export default {
   margin-top: 600px;
 }
 .header{
-  background-color: #4BD0C9;
   height: 200px;
 }
 .searchbar{
@@ -325,6 +324,5 @@ h1 {
     /*width: 290px;*/
   }
 }
-
 
 </style>

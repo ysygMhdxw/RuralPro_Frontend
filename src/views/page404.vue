@@ -12,6 +12,8 @@
       <div class="link-container">
         <a target="_blank" @click="backtoHomepage" class="more-link" style="font-family: 华文中宋;font-size: 20px">回到首页</a>
       </div>
+
+
     </div>
   </div>
 </template>
@@ -188,6 +190,7 @@ a.more-link {
   background-size: cover;
   background-position: 50% 50%;
 }
+
 
 
 </style>

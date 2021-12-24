@@ -25,7 +25,7 @@
 
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-3">
+        <button class="custom-btn btn-5 btn-5-3" @click="gotoProvertyStory">
           <img src="../assets/img/story.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>减贫故事</span>
         </button>
@@ -37,7 +37,7 @@
         </button>
         <ul>
           <li><a href="">减贫数据纵览</a></li>
-          <li><a href="">减贫可视化数据</a></li>
+          <li><a href="" @click="gotoProvertyData">减贫可视化数据</a></li>
         </ul>
       </el-col>
       <el-col class="column" :span="4">
@@ -80,6 +80,13 @@ export default {
     window.removeEventListener("scroll", this.watchScroll);
   },
   methods: {
+    gotoProvertyStory(){
+      this.$router.replace("/povertyStory")
+    },
+    gotoProvertyData(){
+      this.$router.replace("/dataVisualization")
+    }
+    ,
     gototimelinepage(){
       this.$router.replace("/unfinished")
     }
