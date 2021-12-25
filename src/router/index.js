@@ -9,6 +9,7 @@ import PovertyData from "@/views/PovertyData";
 import PovertyStory from "@/views/PovertyStory";
 import DataOverview from "@/views/DataOverview";
 import DataTest from "@/views/DataTest";
+import CountyNews from "@/views/CountyNews";
 
 
 
@@ -62,6 +63,10 @@ const routes = [
     path:"/datatest",
     name:"DataTest",
     component: DataTest
+  },{
+    path:"/countynews",
+    name:"CountyNews",
+    component: CountyNews
   },
 
 ]

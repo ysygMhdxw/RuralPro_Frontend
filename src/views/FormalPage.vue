@@ -1,7 +1,7 @@
 <template>
-  <NavigationBar style="position: absolute;z-index:999;top: 0;"/>
-  <div style="margin-top: 80px">
-    <el-carousel height="906px" :interval="2000" arrow="always">
+  <NavigationBarNew style="position: absolute;z-index:999;top: 0;"/>
+  <div style="top: 80px;width: 100%;height: 900px">
+    <el-carousel height="900px"  :interval="2000" arrow="always">
       <el-carousel-item>
         <div class="textLabeltab">
           <a href="https://www.jianpincn.com/"
@@ -39,10 +39,11 @@
 
 <script>
 import NavigationBar from "@/components/NavigationBar";
+import NavigationBarNew from "@/components/NavigationBarNew";
 
 export default {
   name: "FormalPage",
-  components: {NavigationBar},
+  components: {NavigationBarNew, NavigationBar},
   mounted() {
     if (window.history && window.history.pushState) {
       history.pushState(null, null, document.URL); //这里有没有都无所谓，最好是有以防万一

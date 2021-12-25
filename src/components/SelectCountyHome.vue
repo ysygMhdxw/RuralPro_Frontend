@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="value" clearable placeholder="云南省" style="margin-top: 8px">
+  <el-select v-model="value" clearable placeholder="永胜县" style="margin-top: 8px">
     <el-option
         v-for="item in options"
         :key="item.value"

@@ -186,7 +186,9 @@
 
     <section>
       <div class="block">
-        <p><span class="first-character atw">W</span>文字</p>
+        <p><span class="first-character atw">图</span>
+          图中统计了国有单位、城镇集体单位和其他单位的职工人数，其中，其他单位包括非国有的社会团体或经济组织、集体或者民办的事业单位、以及各类团体等。其他单位类职工人数最多，但20年总人数出现大幅下滑，
+          下滑原因部分在于疫情期间的裁员。国有单位职工人数占比略低于其他单位类，5年来总人数较为平均。</p>
         <ProvinceEmployNum/>
         <p class="line-break margin-top-10"></p>
 
@@ -198,7 +200,9 @@
 
     <section>
       <div class="block">
-        <p><span class="first-character atw">W</span>文字
+        <p><span class="first-character atw">1</span>
+          6年以来，云南省住户存款年末余额稳定增长，但存款额依旧处于全国中下游。2020年住户存款余额达到15888元，相较之下，北京的人均存款高达19.6万元，上海次之，为14.8万元。
+
         </p>
         <Provincedeposits/>
         <p class="line-break margin-top-10"></p>

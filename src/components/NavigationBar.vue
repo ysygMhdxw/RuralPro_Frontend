@@ -1,6 +1,4 @@
 <template>
-
-
     <div id="nav" class="nav" :class = "{'nav-top': navBox.active}"
          :style = "top = navBox.top" @load = "navLoad">
 
@@ -130,7 +128,9 @@ export default {
 li {
   list-style: none;
 }
-
+span{
+  font-family: 华文中宋;
+}
 .nav-active {
   float: left;
   width: 87.5%;
@@ -194,7 +194,7 @@ li {
   width: 98%;
   text-align: center;
   color: #fff;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   background: transparent;
   transition: all 0.3s ease;
   position: relative;
@@ -205,7 +205,7 @@ li {
 }
 
 .nav1:hover {
-  background: #bd3131;
+  background:#BD3131;
   opacity: 90%;
   box-shadow: none;
   cursor: pointer;
@@ -219,8 +219,14 @@ li {
   right: 0;
   height: 2px;
   width: 0;
-  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
+  /*box-shadow: #BD3131;*/
+  box-shadow: -1px -1px 5px 0px #BD3131, 7px 7px 20px 0px #0003,
   4px 4px 5px 0px #0002;
+  /*box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),*/
+  /*7px 7px 20px 0px rgba(0, 0, 0, .1),*/
+  /*4px 4px 5px 0px rgba(0, 0, 0, .1);*/
+  /*box-shadow: -1px -1px 5px 0px #BD3131, 7px 7px 20px 0px #BD3131,*/
+  /*4px 4px 5px 0px #BD3131;*/
   transition: 400ms ease all;
 }
 
@@ -269,7 +275,7 @@ li {
   position: absolute;
   bottom: 89vh;
   font-size: 12px;
-  background: #fff;
+  background:#fff;
   border: solid 1px #aaa;
   border-bottom: none;
   width: 19.5%;
@@ -311,7 +317,7 @@ li {
 .nav-top .dl {
   position: absolute;
   font-size: 12px;
-  background-color: #fff;
+  background-color:#fff;
   border: 1px solid #ccc;
   border-top: none;
   width: 19.5%;
