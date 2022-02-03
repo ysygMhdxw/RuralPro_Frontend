@@ -17,3 +17,4 @@ for (const name in ElIcons){
 app.use(echarts);
 app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 app.use(store).use(router).mount('#app')
+
