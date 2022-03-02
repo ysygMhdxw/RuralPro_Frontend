@@ -17,7 +17,8 @@ npm run build
 ```
 
 ## 参考UI
-<video src="src/assets/video/demo视频.mp4" width="800px" height="600px" controls="controls"></video>
+
+[//]: # (<video src="src/assets/video/demo视频.mp4" width="800px" height="600px" controls="controls"></video>)
 
 ## Component Description
 - NavigationBar 导航栏

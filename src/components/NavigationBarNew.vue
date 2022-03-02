@@ -7,10 +7,14 @@
       <el-col class="column" :span="2" >
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5" @click="gotoformalpage">
+        <button class="custom-btn btn-5 btn-5-2" @click="gotoformalpage">
           <img src="../assets/img/official.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>减贫知识库</span>
         </button>
+        <ul>
+          <li><a href=""  @click="">减贫平台直达</a></li>
+          <li><a href="" @click="" >减贫知识问答</a></li>
+        </ul>
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-2" @click="gototimelinepage">
