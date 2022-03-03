@@ -2,19 +2,8 @@
   <NavigationBarNew style="position: absolute;z-index:999;top: 0;"/>
   <img src="../assets/img/newspic.jpg" style="width: 100%;height:200px"/>
   <PovertySwitchTool style="position: absolute;width:100%;height:100%;top: 100px;padding-left: 5%;padding-right: 5%"/>
-  <div id="wrap" style="position:absolute;top:60%;padding-left: 9%;padding-right: 9%">
-    <div class="Grid">
-      <div class="Grid-cell">
-        <img src="../assets/img/platformvegtables.png"/>
-      </div>
-      <div class="Grid-cell">
-        <img src="../assets/img/platformvegtables.png"/>
-      </div>
-      <div class="Grid-cell">
-        <img src="../assets/img/platformvegtables.png"/>
-      </div>
-    </div>
-  </div>
+
+
 </template>
 
 <script>
@@ -32,16 +21,15 @@ export default {
       // 回退时执行goback方法
     }
   },
-  destroyed(){
-    window.removeListener('popstate', this.back,false)
+  destroyed() {
+    window.removeListener('popstate', this.back, false)
   },
   data() {
-    return {}
-  },
-  methods: {
-    back(){
+    return {
 
     }
+  },
+  methods: {
   }
 }
 </script>
@@ -67,9 +55,11 @@ export default {
 
 .Grid-cell {
   flex: 1;
+  border-style: solid;
+  border-width: 2px;
 }
 
-.set :hover{
+.set :hover {
   animation: rotate360 .5s ease-out 0s;
 }
 </style>
