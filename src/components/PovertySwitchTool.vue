@@ -7,7 +7,7 @@
         <p style="font-size: 15px;font-family: 宋体;color: white;padding-top: 5px;">提供用户直达平台，使用户更加便利的了解当下权威的减贫网站，深刻了解减贫途径并切实的减贫到实处。
         </p>
       </div>
-      <img class="set" src="../assets/img/set.svg" style="width:30px;height:30px;position: relative;top:45%;right:38%"/>
+      <img class="set" src="../assets/img/set.svg" style="width:30px;height:30px;position: relative;top:40%;right:38%"/>
     </div>
     <div id="div2" class="block" @click="swithPlatform(2)" style="background-color: white">
       <div style="position: relative;top: 20%;text-align: left;padding-left: 10%;padding-right: 10%">
@@ -15,7 +15,7 @@
         <p style="font-size: 15px;font-family: 宋体;padding-top: 5px;">社会扶贫作为一项复杂的工作，扶贫组织在其中有很强地补短板作用，在我国的扶贫工作实践中不可或缺。
         </p>
       </div>
-      <img class="set" src="../assets/img/setBlack.svg" style="width:30px;height:30px;position: relative;top:45%;right:38%"/>
+      <img class="set" src="../assets/img/setBlack.svg" style="width:30px;height:30px;position: relative;top:40%;right:38%"/>
     </div>
     <div id="div3" class="block" @click="swithPlatform(3)" style="background-color: white">
       <div style="position: relative;top: 20%;text-align: left;padding-left: 10%;padding-right: 10%">
@@ -24,16 +24,17 @@
         </p>
 
       </div>
-      <img class="set" src="../assets/img/setBlack.svg" style="width:30px;height:30px;position: relative;top:45%;right:38%"/>
+      <img class="set" src="../assets/img/setBlack.svg" style="width:30px;height:30px;position: relative;top:40%;right:38%"/>
     </div>
   </div>
-  <div id="wrap1" style="position:absolute;top:60%;padding-bottom: 50px;padding-right: 30px">
+  <div id="wrap1" style="position:relative;top:15%;padding-bottom: 50px;">
       <div v-for="eachplatform in platformlist" class="Grid-cell block2" >
         <a :href="eachplatform.url" style="text-decoration: none" >
           <img style="width:100%;height: 50%" :src="eachplatform.pic"/>
-          <div style="height: 100px;width:10px;border:black;border-style: solid;border-width: 2px;margin:auto;left: 0;right:0"></div>
-          <p style="color:black; font-size: 23px;padding-top: 20px;font-family: 华文中宋">{{eachplatform.webname}}</p>
-          <p style="text-align: left;padding: 20px;font-size:15px;font-family: 宋体">  {{eachplatform.introduction}}</p>
+          <div style="background-color: #B55959;height: 35px;width:10px;border:#B55959;border-style: solid;border-width: 2px;margin:auto;left: 0;right:0;position: relative;top:-5%"></div>
+          <p style="color:black; font-size: 23px;padding-top: 10px;font-family: 华文中宋">{{eachplatform.webname}}</p>
+          <p style="color:black;text-align: left;padding: 20px;font-size:15px;font-family: 宋体">&nbsp;&nbsp;{{eachplatform.introduction}}</p>
+          <img style="width:10%;height:10%;position: relative;float: right;bottom:18px;right: 0px;" src="../assets/img/plus.svg"/>
         </a>
       </div>
   </div>
@@ -91,7 +92,7 @@ export default {
 
 .block {
   width: 30%;
-  height: 250px;
+  height: 220px;
   background-color: #B55959;
   border-style: solid;
   border-width: 2px;
@@ -99,7 +100,7 @@ export default {
 
 .block2 {
   width: 25%;
-  height: 400px;
+  height: 420px;
   background-color: white;
   border-style: solid;
   border-width: 2px;

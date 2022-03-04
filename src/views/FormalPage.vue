@@ -35,29 +35,6 @@ export default {
 </script>
 
 <style scoped>
-#wrap {
-  display: flex;
-  justify-content: center;
-
-}
-
-.block {
-  width: 30%;
-  height: 300px;
-  background-color: #B55959;
-  border-style: solid;
-  border-width: 2px;
-}
-
-.Grid {
-  display: flex;
-}
-
-.Grid-cell {
-  flex: 1;
-  border-style: solid;
-  border-width: 2px;
-}
 
 .set :hover {
   animation: rotate360 .5s ease-out 0s;
