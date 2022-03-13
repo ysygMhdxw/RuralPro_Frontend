@@ -36,7 +36,7 @@
         </button>
         <ul>
           <li><a href=""  @click="gotoProvertyData">减贫数据纵览</a></li>
-          <li><a href="" @click="gotoProvertyData" >减贫可视化数据</a></li>
+          <li><a href="" @click="gotoProvertyDataScreen">减贫可视化数据</a></li>
         </ul>
       </el-col>
       <el-col class="column" :span="4">
@@ -85,6 +85,10 @@ export default {
     },
     gotoProvertyData(){
       this.$router.push("/DataOverview")
+    }
+    ,
+    gotoProvertyDataScreen(){
+      this.$router.push("/DataScreen")
     }
     ,
     gototimelinepage(){

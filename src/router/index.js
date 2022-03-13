@@ -8,6 +8,7 @@ import page404 from "@/views/page404";
 import PovertyData from "@/views/PovertyData";
 import PovertyStory from "@/views/PovertyStory";
 import DataOverview from "@/views/DataOverview";
+import DataScreen from "@/views/DataScreen";
 import DataTest from "@/views/DataTest";
 import CountyNews from "@/views/CountyNews";
 
@@ -59,11 +60,18 @@ const routes = [
     path:"/DataOverview",
     name:"DataOverview",
     component: DataOverview
-  },{
+  },
+  {
+    path:"/DataScreen",
+    name:"DataScreen",
+    component: DataScreen
+  },
+  {
     path:"/datatest",
     name:"DataTest",
     component: DataTest
-  },{
+  },
+  {
     path:"/countynews",
     name:"CountyNews",
     component: CountyNews
