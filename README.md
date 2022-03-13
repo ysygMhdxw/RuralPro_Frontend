@@ -17,7 +17,8 @@ npm run build
 ```
 
 ## 参考UI
-<video src="src/assets/video/demo视频.mp4" width="800px" height="600px" controls="controls"></video>
+
+[//]: # (<video src="src/assets/video/demo视频.mp4" width="800px" height="600px" controls="controls"></video>)
 
 ## Component Description
 - NavigationBar 导航栏
@@ -51,6 +52,5 @@ npm run build
 
 ## 🆘 Problem
 - 首页的大事年表分辨率问题
-- 每个分页面的导航栏设计
-- 后端连接和部署
+
 
