@@ -12,9 +12,13 @@
           <span>减贫知识库</span>
         </button>
         <ul>
-          <li><a href=""  @click="">减贫平台直达</a></li>
-          <li><a href="" @click="" >减贫知识问答</a></li>
+          <li><a href=""  @click="gotoformalpage">减贫平台直达</a></li>
+          <li><a href="" @click="gotoProvertyDataScreen">减贫知识小问答</a></li>
         </ul>
+<!--        <ul>-->
+<!--          <li><a href=""  @click="gotoformalpage">减贫平台直达</a></li>-->
+<!--          <li><a href="" @click="" >减贫知识问答</a></li>-->
+<!--        </ul>-->
       </el-col>
       <el-col class="column" :span="4">
         <button class="custom-btn btn-5 btn-5-2" @click="gototimelinepage">
