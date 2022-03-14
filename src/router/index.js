@@ -11,6 +11,7 @@ import DataOverview from "@/views/DataOverview";
 import DataScreen from "@/views/DataScreen";
 import DataTest from "@/views/DataTest";
 import CountyNews from "@/views/CountyNews";
+import QuestionPage from "@/views/QuestionPage";
 
 
 
@@ -37,6 +38,11 @@ const routes = [
     component: FormalPage
   },
   {
+    path:"/question",
+    name:"question",
+    component: QuestionPage
+  },{
+
     path:"/timeline",
     name:"timeline",
     component:TimeLineHome

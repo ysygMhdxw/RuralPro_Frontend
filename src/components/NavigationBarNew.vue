@@ -7,13 +7,13 @@
       <el-col class="column" :span="2" >
       </el-col>
       <el-col class="column" :span="4">
-        <button class="custom-btn btn-5 btn-5-2" @click="gotoformalpage">
+        <button class="custom-btn btn-5 btn-5-2" @click="">
           <img src="../assets/img/official.svg" width="25" height="25" style="padding-top: 8px;padding-right: 4px"/>
           <span>减贫知识库</span>
         </button>
         <ul>
           <li><a href=""  @click="gotoformalpage">减贫平台直达</a></li>
-          <li><a href="" @click="gotoProvertyDataScreen">减贫知识小问答</a></li>
+          <li><a href="" @click="gotoquestionpage">减贫知识小问答</a></li>
         </ul>
 <!--        <ul>-->
 <!--          <li><a href=""  @click="gotoformalpage">减贫平台直达</a></li>-->
@@ -101,6 +101,9 @@ export default {
     ,
     gotoformalpage(){
       this.$router.push("/formal")
+    }
+    ,gotoquestionpage(){
+      this.$router.push("/question")
     }
     ,
     watchScroll() {
