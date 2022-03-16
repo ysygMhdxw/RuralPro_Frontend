@@ -20,7 +20,7 @@ export default {
     setYunnanMap() {
       var myChart = echarts.init(document.getElementById('Yunnan')); // 获得容器所在位置
       myChart.showLoading();  // 显示加载动画
-      var mapJsonPath = "../../../static/Yunnan.json"; // json文件的相对路径
+      var mapJsonPath = "static/Yunnan.json"; // json文件的相对路径
 
       var option = {
         visualMap: {
