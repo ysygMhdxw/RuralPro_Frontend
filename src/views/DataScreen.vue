@@ -351,7 +351,6 @@ export default {
     ProvincePublicBudget2,
     ProvincePublicPerBudget2,
     PopulationByYear,
-    ProvinceAgriYield,
     ProvinceTotalProfits2,
     ProvinceTotalAsset2,
     YunnanMap
