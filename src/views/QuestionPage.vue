@@ -166,7 +166,6 @@ export default {
     back(){
       //无法实现
       this.$emit('change',false)
-
     }
   }
 }
