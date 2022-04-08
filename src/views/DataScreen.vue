@@ -1,7 +1,5 @@
 <template>
-  <el-backtop />
   <div id="page-wrapper">
-
       <div class="header-wrapper">
         <div class="header">
           <h1>云南省减贫数据大屏</h1>
@@ -57,7 +55,7 @@
           </div>
           <div class="middle-wrapper">
             <div class="graph-container map">
-              <YunnanMap style="float:right;margin-top:1.2%;width: 99%;height:86%;"/>
+              <YunnanMap style="background:rgba(210,210,210,0.25);margin:0 2%;width: 96%;height:100%;border:1px solid #da6161;box-shadow:0px 0px 2px 1px #be7575;border-radius: 12px;"/>
             </div>
           </div>
           <div class="bottom-wrapper">
@@ -77,30 +75,27 @@
             </div>
           </div>
           <div class="middle-wrapper">
-            <h2>农产品分布<img src="../assets/img/diamond.png"/></h2>
+            <span>2016~2020年全省各农作物平均产量（单位：万吨）</span><h2>农产品分布<img src="../assets/img/diamond.png"/></h2>
             <div class="graph-container agricultural">
-
+              <ProvinceAgriYield2 style="float:right;margin-top:1.2%;width: 99%;height:86%;"/>
             </div>
           </div>
           <div class="bottom-wrapper">
             <span>{{titleProfits}}</span><h2>商业数据统计<img src="../assets/img/diamond.png"/></h2>
             <div class="graph-container business">
-              <div class="btn-container">
+              <div class="btn-container" style="position:relative; left:10px;">
                 <div class="btnUp btn5" @click="btn5Click"></div>
                 <div class="btnDown btn6" @click="btn6Click"></div>
               </div>
-              <ProvinceTotalAsset2 v-if="btnProfits" style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
-              <ProvinceTotalProfits2 v-else style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
-
+              <ProvinceTotalAsset2 v-if="btnProfits" style="float:right;margin-top:1.2%;width: 95.5%;height:86%;"/>
+              <ProvinceTotalProfits2 v-else style="float:right;margin-top:1.2%;width: 95.5%;height:86%;"/>
             </div>
           </div>
         </div>
       </div>
-
-  </div>
+    </div>
 
 </template>
-
 
 <style scoped>
   * {
@@ -117,8 +112,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(#fff, #ffeed9);
-
+    background-image: linear-gradient(#fff, #ffedd8);
   }
 
   .header-wrapper {
@@ -212,7 +206,15 @@
   }
 
   .center-wrapper {
+    flex: 1.25;
+  }
+
+  .right-wrapper {
     flex: 1;
+  }
+
+  .map {
+    margin: 0 auto;
   }
 
   .top-wrapper, .middle-wrapper, .bottom-wrapper {
@@ -224,16 +226,12 @@
     margin-bottom: 0;
   }
 
-  .center-wrapper .top-wrapper {
-    flex: 1;
-  }
-
   .center-wrapper .middle-wrapper {
     flex: 4;
   }
 
   .center-wrapper .bottom-wrapper {
-    flex: 1.5;
+    flex: 1.6;
   }
 
   .graph-container {
@@ -246,7 +244,8 @@
   .data-wrapper {
     display: flex;
     flex-direction: row;
-    margin: 1.6vh auto;
+    margin: 0 auto;
+    margin-top: 2.2vh;
     width: 90%;
     height: 10vh;
   }
@@ -268,13 +267,14 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    margin-top: 2vh;
     width: 85%;
     height: 20vh;
   }
 
   .news-title {
     margin: 0 auto;
-    width: 95%;
+    width: 100%;
     border-radius: 5px;
     padding: 4px;
     background-color: #d27067;
@@ -341,6 +341,7 @@ import PopulationByYear from "@/components/Graph/PopulationByYear";
 import ProvinceTotalProfits2 from "@/components/Graph/ProvinceTotalProfits2";
 import ProvinceTotalAsset2 from "@/components/Graph/ProvinceTotalAsset2";
 import YunnanMap from "@/components/Graph/YunnanMap";
+import ProvinceAgriYield2 from "@/components/Graph/ProvinceAgriYield2";
 
 export default {
   name: "Total",
@@ -353,7 +354,8 @@ export default {
     PopulationByYear,
     ProvinceTotalProfits2,
     ProvinceTotalAsset2,
-    YunnanMap
+    YunnanMap,
+    ProvinceAgriYield2
   },
   data() {
     return {
@@ -394,7 +396,7 @@ export default {
     },
     btn6Click() {
       this.btnProfits = false;
-      this.titleProfits = '2016~2018年资产、负债及所有者权益总计(单位：亿元)';
+      this.titleProfits = '2016~2018年资产负债及所有者权益总计(单位：亿元)';
     }
   }
 }
