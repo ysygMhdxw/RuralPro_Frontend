@@ -8,7 +8,12 @@
       <div class="title-des">
         <img src="../assets/img/square-icon.png" style="margin-left: 235px;width: 25px;height: 25px;display:inline-block;" alt="">
         <h3 style="margin-left: 20px;margin-top: 50px;font-size: 30px;color:#7C3637;display:inline-block;">判断题</h3>
-        <div style="margin-left: 280px;margin-top: 20px;width: 200px;color:#7C3637;">文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容</div>
+        <div style="margin-left: 280px;margin-top: 20px;width: 200px;color:#7C3637;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021年4月6日，国务院新闻办公室发表《人类减贫的中国实践》白皮书，白皮书记录了中国消除绝对贫困的伟大历程，介绍人类减贫的中国探索和实践，分享中国扶贫脱贫的经验做法。
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于减贫历史，减贫政策，你了解多少？
+<!--          文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容-->
+        </div>
       </div>
       <div class="card" style="cursor: pointer; width: 800px;" ontouchstart="this.classList.toggle('hover');">
         <div class="container" style="margin-left: 140px;">
