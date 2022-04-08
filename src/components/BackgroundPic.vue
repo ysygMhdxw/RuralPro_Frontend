@@ -15,7 +15,7 @@
       </div>
     </div>
     <video id="v1" autoplay loop muted style="width: 100%;">
-      <source src="../assets/video/demobg_Trim_1.mp4" style="width:100%;margin: 0px;padding: 0px" type="video/mp4" />
+      <source src="../assets/video/frontpage_video.mp4" style="width:100%;margin: 0px;padding: 0px" type="video/mp4" />
     </video>
   </div>
 </template>

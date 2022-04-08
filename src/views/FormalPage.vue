@@ -3,7 +3,6 @@
   <img src="../assets/img/newspic.jpg" style="width: 100%;height:200px"/>
   <PovertySwitchTool style="position: absolute;width:100%;height:100%;top: 100px;padding-left: 5%;padding-right: 5%"/>
 
-
 </template>
 
 <script>
@@ -30,6 +29,11 @@ export default {
     }
   },
   methods: {
+    back(){
+      //无法实现
+      this.$emit('change',false)
+
+    }
   }
 }
 </script>

@@ -1,6 +1,11 @@
 <template style="margin: 0">
-  <NavigationBarNew style="position: absolute;top: 0;z-index:999;"/>
-  <img src="../assets/img/povertyNews.png" style="margin-top: 50px" height="800" width="1400" alt="">
+  <div style="background-color: #F3F2EF">
+    <NavigationBarNew style="position: absolute;top: 0;z-index:999;"/>
+
+  </div>
+
+<!--  <img src="../assets/img/povertyNews.png" style="margin-top: 50px" height="800" width="1400" alt="">-->
+
 </template>
 
 <script>

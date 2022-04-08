@@ -57,7 +57,7 @@
           </div>
           <div class="middle-wrapper">
             <div class="graph-container map">
-
+              <YunnanMap style="float:right;margin-top:1.2%;width: 99%;height:86%;"/>
             </div>
           </div>
           <div class="bottom-wrapper">
@@ -71,7 +71,7 @@
         </div>
         <div class="right-wrapper">
           <div class="top-wrapper">
-            <h2>人口<img src="../assets/img/diamond.png"/></h2>
+            <span>2016~2020年全省人口总数（单位：万）</span><h2>人口<img src="../assets/img/diamond.png"/></h2>
             <div class="graph-container population">
               <PopulationByYear style="float:right;margin-top:1.2%;width: 99%;height:86%;"/>
             </div>
@@ -89,8 +89,9 @@
                 <div class="btnUp btn5" @click="btn5Click"></div>
                 <div class="btnDown btn6" @click="btn6Click"></div>
               </div>
-              <ProvinceTotalProfits2 v-if="btnProfits" style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
-              <ProvinceTotalAsset2 v-else style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
+              <ProvinceTotalAsset2 v-if="btnProfits" style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
+              <ProvinceTotalProfits2 v-else style="float:right;margin-top:1.2%;width: 96%;height:86%;"/>
+
             </div>
           </div>
         </div>
@@ -254,6 +255,8 @@
     flex: 1;
     margin: 0 1px;
     background-color: #b74343;
+    box-shadow: 0px 0px 2px 1px #d27067;
+    border: 1px solid #ddd;
     color: #ffffe5;
     height: 100%;
     padding: 14px 0;
@@ -337,12 +340,7 @@ import ProvincePublicPerBudget2 from "@/components/Graph/ProvincePublicPerBudget
 import PopulationByYear from "@/components/Graph/PopulationByYear";
 import ProvinceTotalProfits2 from "@/components/Graph/ProvinceTotalProfits2";
 import ProvinceTotalAsset2 from "@/components/Graph/ProvinceTotalAsset2";
-
-import ProvinceAgriYield from "@/components/Graph/ProvinceAgriYield";
-import ProvinceStorageComeOut from "@/components/Graph/ProvinceStorageComeOut";
-import ProvinceMeatMilk from "@/components/Graph/ProvinceMeatMilk";
-import Provincedeposits from "@/components/Graph/Provincedeposits";
-import ProvinceEmployNum from "@/components/Graph/ProvinceEmployNum";
+import YunnanMap from "@/components/Graph/YunnanMap";
 
 export default {
   name: "Total",
@@ -353,14 +351,9 @@ export default {
     ProvincePublicBudget2,
     ProvincePublicPerBudget2,
     PopulationByYear,
-    ProvinceAgriYield,
     ProvinceTotalProfits2,
     ProvinceTotalAsset2,
-
-    ProvinceEmployNum,
-    Provincedeposits,
-    ProvinceMeatMilk,
-    ProvinceStorageComeOut
+    YunnanMap
   },
   data() {
     return {
