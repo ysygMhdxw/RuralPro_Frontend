@@ -33,14 +33,14 @@
             <div class="dd">
               <span>减贫数据纵览</span>
             </div>
-            <div class="dd" @click="gotoProvertyData">
+            <div class="dd" @click="gotoPovertyData">
               <span>减贫可视化数据</span>
             </div>
           </div>
         </li>
 
         <li class="column li5">
-          <div class="nav1">
+          <div class="nav1" @click="gotoPovertyNews">
             <img src="../assets/img/information.svg" alt="减贫资讯">
             <span class="nav1-item">减贫资讯</span>
           </div>
@@ -78,7 +78,7 @@ export default {
     gotoProvertyStory(){
       this.$router.push("/povertyStory")
     },
-    gotoProvertyData(){
+    gotoPovertyData(){
       this.$router.push("/DataOverview")
     }
     ,
@@ -88,6 +88,11 @@ export default {
     ,
     gotoformalpage(){
       this.$router.push("/formal")
+    }
+    ,
+    gotoPovertyNews(){
+      console.log("flag");
+     this.$router.push("/CountyNews")
     }
     ,
     navLoad(){
@@ -206,7 +211,7 @@ span{
 
 .nav1:hover {
   background:#BD3131;
-  opacity: 90%;
+  /*opacity: 90%;*/
   box-shadow: none;
   cursor: pointer;
 }

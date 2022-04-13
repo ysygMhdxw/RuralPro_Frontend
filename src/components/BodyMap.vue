@@ -160,18 +160,18 @@ export default {
       }
 
       console.log(this.mydata)
-      this.sanData = [
-        {name: "散点1", value: 10000},
-        {name: "散点2", value: 170000},
-        {name: "散点3", value: 1900000},
-        {name: "散点4", value: 1900000},
-        {name: "散点5", value: 1900000},
-      ]
-      this.geoCoordMap = {
-        "散点1": [112.549248, 37.857014],
-        "散点2": [116.000052, 37.857014],
-        "散点3":  [116.302563,39.872545]
-      }
+      // this.sanData = [
+      //   {name: "散点1", value: 10000},
+      //   {name: "散点2", value: 170000},
+      //   {name: "散点3", value: 1900000},
+      //   {name: "散点4", value: 1900000},
+      //   {name: "散点5", value: 1900000},
+      // ]
+      // this.geoCoordMap = {
+      //   "散点1": [112.549248, 37.857014],
+      //   "散点2": [116.000052, 37.857014],
+      //   "散点3":  [116.302563,39.872545]
+      // }
 
 
       var myChart = echarts.init(document.getElementById("world"));
@@ -238,7 +238,7 @@ export default {
             name: "数量",
             type: "effectScatter",
             coordinateSystem: 'geo',
-            data: this.convertData(this.sanData),
+            // data: this.convertData(this.sanData),
             symbolSize: 3,
             showEffectOn: "emphasis",
             rippleEffect: {brushType: 'stroke'},

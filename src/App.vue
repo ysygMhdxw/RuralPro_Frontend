@@ -12,6 +12,11 @@
   text-align: center;
   color: #2c3e50;
 }
+@import './assets/font/font.css';
+#app {
+  font-family: '华文中宋';
+  font-weight: 400;
+}
 
 </style>
 <script>

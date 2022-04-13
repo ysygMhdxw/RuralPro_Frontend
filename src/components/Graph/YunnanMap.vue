@@ -19,51 +19,41 @@ export default {
   methods: {
     setYunnanMap() {
       var myChart = echarts.init(document.getElementById('Yunnan')); // 获得容器所在位置
-      myChart.showLoading();  // 显示加载动画
       var mapJsonPath = "static/Yunnan.json"; // json文件的相对路径
 
       var option = {
         visualMap: {
-          min: 0,
-          max: 500,
           show: false,
-          splitNumber: 5,
-          inRange: {
-            color: ['#d94e5d', '#eac736', '#50a3ba'].reverse()
-          },
-          textStyle: {
-            color: '#fff'
-          }
+        },
+        tooltip: {
+          trigger: 'axis'
         },
         geo: {
-          map: '云南',
+          map: 'yunnan',
+          roam: 'scale',
           label: {
-            normal: {
-              show: true,
-              color: '#fff'
+            show: false,
+          },
+          itemStyle: {
+            areaColor: '#4d669b',
+            borderColor: '#99aeda'
+          },
+          emphasis: {
+            label: {
+              show: false,
             },
-            emphasis: {
-              show: true,
-              color: '#fff'
+            itemStyle: {
+              areaColor: '#f3f37b'
             }
           },
           roam: false,
-          itemStyle: {
-            normal: {
-              areaColor: '#40458e',
-              borderColor: '#6367ad',
-              borderWidth: 1.5
-            },
-            emphasis: {
-              areaColor: '#40458e'
-            }
-          },
-          "left": 0,
-          "right": 0,
-          "top": 0,
-          "bottom": 0
+          "left": 15,
+          "right": 5,
+          "top": 5,
+          "bottom": 5
         },
         series: [{
+          roam: true,
           name: '活跃人数分布',
           type: 'heatmap',
           coordinateSystem: 'geo',
@@ -73,8 +63,7 @@ export default {
       }
 
       $.get(mapJsonPath, function (geoJson) {
-        myChart.hideLoading();  // 停止加载动画
-        echarts.registerMap('云南', geoJson);
+        echarts.registerMap('yunnan', geoJson);
         myChart.setOption(option);
       });
 
