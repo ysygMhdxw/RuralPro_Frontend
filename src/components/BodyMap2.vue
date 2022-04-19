@@ -1,7 +1,6 @@
 <template>
   <div>
-
-    <div style="width: 800px;height:580px;" id="world"></div>
+    <div id="china" style="height: 580px;width: 720px"></div>
     <el-row>
       <el-col :span="2" style="margin-left: 130px">
         <div>
@@ -79,24 +78,17 @@
         </div>
       </el-col>
     </el-row>
-
   </div>
-
-
 </template>
-<script>
 
-import china from "../assets/js/china"
-import * as echarts from 'echarts';
+<script>
+import * as echarts from "echarts";
+import $ from "jquery";
 import request from "@/utils/request";
-import {VideoPlay} from "@element-plus/icons";
 
 export default {
-  name: "BodyMap",
-  mounted() {
-    this.first();
-    this.yearSwitch(2016);
-  },
+  name: 'BodyMap2',
+
   data() {
     return {
       index: {},
@@ -106,8 +98,11 @@ export default {
       active: 0,
     }
   },
+  mounted() {
+    this.yearSwitch(2016);
+    this.setYunnanMap();  // 通过post请求方式读取json文件，但要求json文件必须在vue工程下的static文件夹
+  },
   methods: {
-
     playMap() {
       console.log(this.active)
       if (this.active + 2016 <= 2021) {
@@ -117,9 +112,7 @@ export default {
           _this.playMap();
         }, 1000);
       }
-    }
-    ,
-
+    },
     yearSwitch(year) {
       if (year > 2021)
         return
@@ -131,7 +124,7 @@ export default {
         console.log(res)
         this.mydata = res.data
         this.active = year - 2016 + 1;
-        this.loadMap()
+        this.setYunnanMap()
         return res.data
       })
     }
@@ -150,58 +143,13 @@ export default {
       return res;
     }
     ,
+    setYunnanMap() {
+      var myChart = echarts.init(document.getElementById('china')); // 获得容器所在位置
+      var mapJsonPath = "static/ChinaGeo.json"; // json文件的相对路径
 
-    first() {
-    },
-    loadMap() {
-      request.get("County/description").then(res => {
-        console.log(res)
-      })
-
-      function randomData() {
-        return Math.round(Math.random() * 500);
-      }
-
-      console.log(this.mydata)
-      // this.sanData = [
-      //   {name: "散点1", value: 10000},
-      //   {name: "散点2", value: 170000},
-      //   {name: "散点3", value: 1900000},
-      //   {name: "散点4", value: 1900000},
-      //   {name: "散点5", value: 1900000},
-      // ]
-      // this.geoCoordMap = {
-      //   "散点1": [112.549248, 37.857014],
-      //   "散点2": [116.000052, 37.857014],
-      //   "散点3":  [116.302563,39.872545]
-      // }
-
-
-      var myChart = echarts.init(document.getElementById("world"));
       var option = {
-        backgroundColor: '',
-        title: {
-          text: '贫困县分布图',
-          x: 'center'
-        },
-        tooltip: {
-          trigger: 'item'
-        },
-        geo: { // 地图配置
-          show: false,
-          map: "china",
-          label: {
-            normal: {
-              show: false
-            },
-            emphasis: {
-              show: false
-            }
-          },
-          roam: false,
-
-        },
         visualMap: {
+          // show: false,
           min: 0, // 最小值
           max: 80, // 最大值
           text: ['80', '0'],
@@ -212,10 +160,38 @@ export default {
             color: ['#e77c8e', '#ee3f4d', '#cc163a'] // 渐变颜色
           }
         },
+        tooltip: {
+          trigger: 'item',
+        },
+        geo: {
+          map: 'china',
+          label: {
+            show: false,
+          },
+          itemStyle: {
+            areaColor: '#cc163a',
+            borderColor: '#e77c8e'
+          },
+          emphasis: {
+            label: {
+              show: false,
+            },
+            itemStyle: {
+              areaColor: '#f0a1a8'
+            }
+          },
+          roam: false,
+          "left": 15,
+          "right": 5,
+          "top": 5,
+          "bottom": 5
+        },
         series: [
-          //地图配置
           {
             name: "贫困县个数",
+            roam:true,
+            geoIndex:0,
+            coordinateSystem: 'geo',
             type: 'map',
             mapType: 'china',
             label: {
@@ -227,7 +203,6 @@ export default {
               }
             },
             itemStyle: {
-
               emphasis: {
                 areaColor: "#f0a1a8",
                 shadowOffsetX: 0,
@@ -236,46 +211,19 @@ export default {
               }
             },
             data: this.mydata
-          },//散点配置
-          {
-            visualMap: false,
-            name: "数量",
-            type: "effectScatter",
-            coordinateSystem: 'geo',
-            // data: this.convertData(this.sanData),
-            symbolSize: 3,
-            showEffectOn: "emphasis",
-            rippleEffect: {brushType: 'stroke'},
-            hoverAnimation: true,
-            label: {
-              normal: {
-                formatter: '{b}',
-                position: 'right',
-                show: false
-              },
-              emphasis: {
-                show: true
-              }
-            },
-            itemStyle: {
-              normal: {
-                color: "#FFFFFFFF"
-              }
-            }
 
-          }]
-      };
-      myChart.setOption(option)
+          }
+        ]
+      }
+
+      $.get(mapJsonPath, function (geoJson) {
+        echarts.registerMap('china', geoJson);
+        myChart.setOption(option);
+      });
+
     }
   }
 }
-
-
 </script>
-
-<style scoped>
-.progressStep {
-  margin-left: 2px;
-}
-
+<style>
 </style>

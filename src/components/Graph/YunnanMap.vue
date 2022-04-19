@@ -30,7 +30,6 @@ export default {
         },
         geo: {
           map: 'yunnan',
-          roam: 'scale',
           label: {
             show: false,
           },
@@ -53,12 +52,12 @@ export default {
           "bottom": 5
         },
         series: [{
-          roam: true,
-          name: '活跃人数分布',
-          type: 'heatmap',
-          coordinateSystem: 'geo',
-          blurSize: 30,
-          data: []
+          // roam: true,
+          // name: '活跃人数分布',
+          // type: 'heatmap',
+          // coordinateSystem: 'geo',
+          // blurSize: 30,
+          // data: []
         }]
       }
 

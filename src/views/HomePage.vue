@@ -34,7 +34,7 @@
           <p style="font-size: 200px;color: #BD3131;border:3px #BD3131;line-height: 5px;margin-bottom: 50px">—</p>
         <p style="font-family: 华文中宋;color:#BD3131;font-size:30px;font-weight: bold;left:300px;position: absolute">832个国家扶贫开发重点工作县</p>
         <el-col  :span="12" style="background-color:#FFFFFF;margin-left: 120px; margin-top:60px;border: 2px solid #BD3131;border-radius: 10%">
-          <BodyMap />
+          <BodyMap2/>
           <p style="color: #BD3131;font-family: 华文中宋;">点击具体贫困县，进入贫困县主页</p>
         </el-col>
         <el-col :span="12" >
@@ -77,10 +77,12 @@ import TimeLineHome from "@/components/TimeLineHome";
 import SelectProvinceHome from "@/components/SelectProvinceHome";
 import SelectCountyHome from "@/components/SelectCountyHome";
 import NavigationBarNew from "@/components/NavigationBarNew";
+import BodyMap2 from "@/components/BodyMap2";
 
 export default {
   name: "HomePage",
   components: {
+    BodyMap2,
     NavigationBarNew,
     SelectCountyHome,
     SelectProvinceHome,

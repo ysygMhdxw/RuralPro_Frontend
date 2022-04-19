@@ -8,10 +8,10 @@
         <img v-else src="../assets/img/img_slide3.jpg">
       </div>
       <div class="card-container">
-        <div class="tag">{{this.dataList[currentIndex].tag}}</div>
+        <div class="tag" >{{this.dataList[currentIndex].tag}}</div>
         <div class="main-container">
           <div class="title">{{this.dataList[currentIndex].title}}</div>
-          <div class="content">{{this.dataList[currentIndex].content}}</div>
+          <div class="content"  >{{this.dataList[currentIndex].content}}</div>
         </div>
         <ul>
           <li v-for="(dItem, dIndex) in dataList" @click="gotoPage(dIndex)">
@@ -24,7 +24,7 @@
 
     <div class="news-container">
         <div class="hide" v-show="false" v-for="(nItem, nIndex) in newsList"></div>
-        <div class="item" v-for="(nItem, nIndex) in newsList">
+        <div @click="getnews" class="item" v-for="(nItem, nIndex) in newsList">
           <div class="date">{{nItem.date}}</div>
           <div class="tag">{{nItem.tag}}</div>
           <div class="title">{{nItem.title}}</div>
@@ -115,6 +115,12 @@ export default {
     this.runInv();
   },
   methods: {
+    //临时跳转链接
+
+      getnews(){
+        window.location.href = 'https://www.jianpincn.com/zgjpsjk/zxzx/671549.html';
+      },
+
     // 切换图片
     gotoPage(index) {
       this.currentIndex = index;
