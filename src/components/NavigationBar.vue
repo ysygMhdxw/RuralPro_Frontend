@@ -211,7 +211,7 @@ span{
 
 .nav1:hover {
   background:#BD3131;
-  opacity: 90%;
+  /*opacity: 90%;*/
   box-shadow: none;
   cursor: pointer;
 }

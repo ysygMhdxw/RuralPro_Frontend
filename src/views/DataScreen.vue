@@ -61,8 +61,8 @@
           <div class="bottom-wrapper">
             <div class="graph-container achievement">
               <div class="news-wrapper">
-                <div class="news-title">近期云南省减贫脱贫成果</div>
-                <div class="news-content">近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果近期云南省减贫脱贫成果...</div>
+                <div class="news-title">云南省减贫脱贫成果</div>
+                <div class="news-content">截至2020年底，云南省933万农村贫困人口全部脱贫、8502个贫困村全部出列、88个贫困县全部摘帽，11个“直过民族”和人口较少民族整体脱贫，困扰云南千百年的绝对贫困问题得到历史性解决。...</div>
               </div>
             </div>
           </div>

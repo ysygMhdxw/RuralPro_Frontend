@@ -5,7 +5,11 @@
     <el-row>
       <el-col :span="2" style="margin-left: 130px">
         <div>
-          <el-button type="primary" style="background-color: #f1939c;border: #f1939c" circle><el-icon @click.native="playMap()"><video-play /></el-icon></el-button>
+          <el-button type="primary" style="background-color: #f1939c;border: #f1939c" circle>
+            <el-icon @click.native="playMap()">
+              <video-play/>
+            </el-icon>
+          </el-button>
         </div>
       </el-col>
       <el-col :span="13">
@@ -60,7 +64,6 @@
             </el-tooltip>
 
 
-
             <el-tooltip
                 class="item"
                 effect="light"
@@ -96,7 +99,7 @@ export default {
   },
   data() {
     return {
-      index:{},
+      index: {},
       mydata: {},
       sanData: {},
       geoCoordMap: {},
@@ -105,20 +108,20 @@ export default {
   },
   methods: {
 
-    playMap(){
+    playMap() {
       console.log(this.active)
-     if(this.active+2016<=2021){
-       this.yearSwitch(this.active+2016);
-       var _this=this
-       setTimeout(function (){
-         _this.playMap();
-       },1000);
+      if (this.active + 2016 <= 2021) {
+        this.yearSwitch(this.active + 2016);
+        var _this = this
+        setTimeout(function () {
+          _this.playMap();
+        }, 1000);
       }
     }
     ,
 
     yearSwitch(year) {
-      if(year>2021)
+      if (year > 2021)
         return
       request.get("map/" + year, {
         params: {
@@ -126,7 +129,7 @@ export default {
         }
       }).then(res => {
         console.log(res)
-        this.mydata=res.data
+        this.mydata = res.data
         this.active = year - 2016 + 1;
         this.loadMap()
         return res.data
@@ -160,18 +163,18 @@ export default {
       }
 
       console.log(this.mydata)
-      this.sanData = [
-        {name: "散点1", value: 10000},
-        {name: "散点2", value: 170000},
-        {name: "散点3", value: 1900000},
-        {name: "散点4", value: 1900000},
-        {name: "散点5", value: 1900000},
-      ]
-      this.geoCoordMap = {
-        "散点1": [112.549248, 37.857014],
-        "散点2": [116.000052, 37.857014],
-        "散点3":  [116.302563,39.872545]
-      }
+      // this.sanData = [
+      //   {name: "散点1", value: 10000},
+      //   {name: "散点2", value: 170000},
+      //   {name: "散点3", value: 1900000},
+      //   {name: "散点4", value: 1900000},
+      //   {name: "散点5", value: 1900000},
+      // ]
+      // this.geoCoordMap = {
+      //   "散点1": [112.549248, 37.857014],
+      //   "散点2": [116.000052, 37.857014],
+      //   "散点3":  [116.302563,39.872545]
+      // }
 
 
       var myChart = echarts.init(document.getElementById("world"));
@@ -224,6 +227,7 @@ export default {
               }
             },
             itemStyle: {
+
               emphasis: {
                 areaColor: "#f0a1a8",
                 shadowOffsetX: 0,
@@ -238,7 +242,7 @@ export default {
             name: "数量",
             type: "effectScatter",
             coordinateSystem: 'geo',
-            data: this.convertData(this.sanData),
+            // data: this.convertData(this.sanData),
             symbolSize: 3,
             showEffectOn: "emphasis",
             rippleEffect: {brushType: 'stroke'},
@@ -265,7 +269,6 @@ export default {
     }
   }
 }
-
 
 
 </script>

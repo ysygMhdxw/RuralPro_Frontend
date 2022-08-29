@@ -2,26 +2,29 @@
   <div>
 <!--    <div id="particles-js"  >-->
 <!--    </div>-->
-    <div style="position: absolute;top:200px;align-content: center;margin: 100px;left:30%">
-      <h1 style="font-family: 华文中宋">未完待续</h1>
-      <section class="error-container">
-        <span class="four"><span class="screen-reader-text">4</span></span>
-        <span class="zero"><span class="screen-reader-text">0</span></span>
-        <span class="four"><span class="screen-reader-text">4</span></span>
-      </section>
-      <div class="link-container">
-        <a target="_blank" @click="backtoHomepage" class="more-link" style="font-family: 华文中宋;font-size: 20px">回到首页</a>
-      </div>
+<!--    <div style="position: absolute;top:200px;align-content: center;margin: 100px;left:30%">-->
+<!--      <h1 style="font-family: 华文中宋">未完待续</h1>-->
+<!--      <section class="error-container">-->
+<!--        <span class="four"><span class="screen-reader-text">4</span></span>-->
+<!--        <span class="zero"><span class="screen-reader-text">0</span></span>-->
+<!--        <span class="four"><span class="screen-reader-text">4</span></span>-->
+<!--      </section>-->
+<!--      <div class="link-container">-->
+<!--        <a target="_blank" @click="backtoHomepage" class="more-link" style="font-family: 华文中宋;font-size: 20px">回到首页</a>-->
+<!--      </div>-->
 
 
-    </div>
+    <TimeLineHome/>
+
+<!--    </div>-->
   </div>
 </template>
 
 <script>
+import TimeLineHome from "@/components/TimeLineHome";
 export default {
   name: "404page",
-
+  components: {TimeLineHome},
   mounted() {
   },
   methods:{

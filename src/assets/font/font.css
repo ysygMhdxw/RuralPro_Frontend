@@ -1,0 +1,6 @@
+@font-face {
+    font-family: '华文中宋'; /* 重命名字体名 */
+    src: url('hwzs.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

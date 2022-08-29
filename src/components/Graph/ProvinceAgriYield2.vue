@@ -128,9 +128,7 @@ export default {
               }
             ],
             "value": 65.92,
-            "itemStyle": {
-              "color": '#f3f37b'
-            },
+
           },
           {
             "name": "甘蔗产量",

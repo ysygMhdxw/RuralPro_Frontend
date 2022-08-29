@@ -12,6 +12,7 @@ import DataScreen from "@/views/DataScreen";
 import DataTest from "@/views/DataTest";
 import CountyNews from "@/views/CountyNews";
 import QuestionPage from "@/views/QuestionPage";
+import BodyMap2 from "@/components/BodyMap2";
 
 
 
@@ -82,6 +83,11 @@ const routes = [
     name:"CountyNews",
     component: CountyNews
   },
+  {
+    path:"/map",
+    name: "BodyMap2",
+    component: BodyMap2
+  }
 
 ]
 
