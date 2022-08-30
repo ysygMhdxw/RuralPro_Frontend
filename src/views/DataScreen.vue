@@ -42,10 +42,10 @@
             <div class="graph-container data-view">
               <div class="data-wrapper">
                 <div class="data-container">GDP/人均GDP<br>
-                  排名（m/34）
+                  排名（16/34）
                 </div>
                 <div class="data-container">GDP增长率<br>
-                  排名（m/34）
+                  排名（23/34）
                 </div>
                 <div class="data-container">贫困县数量<br>
                   排名（1/832）

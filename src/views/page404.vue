@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
 <!--    <div id="particles-js"  >-->
 <!--    </div>-->
 <!--    <div style="position: absolute;top:200px;align-content: center;margin: 100px;left:30%">-->
@@ -16,15 +16,17 @@
 
     <TimeLineHome/>
 
+    <DataForm/>
 <!--    </div>-->
   </div>
 </template>
 
 <script>
 import TimeLineHome from "@/components/TimeLineHome";
+import DataForm from "@/components/DataForm";
 export default {
   name: "404page",
-  components: {TimeLineHome},
+  components: {TimeLineHome, DataForm},
   mounted() {
   },
   methods:{
@@ -38,6 +40,33 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+div::after {
+  position: absolute;
+  content: "";
+  background-image: url("../assets/img/grey-bg1.jpg");
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
 .error-container {
   text-align: center;
   font-size: 106px;
